@@ -1,128 +1,102 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import { Building2, Clock, Award, Package } from "lucide-react";
+import Image from "next/image";
 
-// Direct JSON (example construction-themed Lottie, you can replace with another JSON snippet)
-const aboutAnim = {
-  v: "5.7.6",
-  fr: 30,
-  ip: 0,
-  op: 120,
-  w: 500,
-  h: 500,
-  nm: "construction animation",
-  ddd: 0,
-  assets: [],
-  layers: [
-    {
-      ddd: 0,
-      ind: 1,
-      ty: 4,
-      nm: "Crane Arm",
-      sr: 1,
-      ks: {
-        o: { a: 0, k: 100 },
-        r: {
-          a: 1,
-          k: [
-            { t: 0, s: 0 },
-            { t: 120, s: 360 },
-          ],
-        },
-        p: { a: 0, k: [250, 250, 0] },
-        a: { a: 0, k: [0, 0, 0] },
-        s: { a: 0, k: [100, 100, 100] },
-      },
-      shapes: [
-        {
-          ty: "rect",
-          d: 1,
-          s: { a: 0, k: [200, 20] },
-          p: { a: 0, k: [0, 0] },
-          r: { a: 0, k: 5 },
-          nm: "Rectangle Path",
-          hd: false,
-        },
-        {
-          ty: "fl",
-          c: { a: 0, k: [0.75, 0.1, 0.1, 1] },
-          o: { a: 0, k: 100 },
-          r: 1,
-          bm: 0,
-          nm: "Fill",
-          hd: false,
-        },
-      ],
-      ip: 0,
-      op: 120,
-      st: 0,
-      bm: 0,
-    },
-  ],
-};
+const features = [
+  {
+    icon: <Building2 className="w-8 h-8 text-[#C01920]" />,
+    title: "Experienced",
+    desc: "With decades of expertise in the construction industry, we bring a wealth of experience.",
+  },
+  {
+    icon: <Package className="w-8 h-8 text-[#C01920]" />,
+    title: "Competitive Price",
+    desc: "We understand the importance of delivering top-notch construction services.",
+  },
+  {
+    icon: <Clock className="w-8 h-8 text-[#C01920]" />,
+    title: "On Time Service",
+    desc: "We prioritize punctuality and efficiency in every project we undertake.",
+  },
+  {
+    icon: <Award className="w-8 h-8 text-[#C01920]" />,
+    title: "Best Materials",
+    desc: "We prioritize quality in construction, using only the finest materials.",
+  },
+];
 
-const About = () => {
+const AboutSection = () => {
   return (
     <section className="w-full py-20 bg-gray-50">
-      <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left - Lottie Animation */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
-        >
-          <Lottie
-            animationData={aboutAnim}
-            loop={true}
-            className="w-[80%] md:w-[90%]"
-          />
-        </motion.div>
-
-        {/* Right - Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-left"
-        >
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#C01920] mb-6">
-            About Us
+      <div className="container mx-auto px-6 lg:px-16">
+        {/* Features */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Key Features Of Dream
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            At <span className="font-semibold">JK Builders</span>, we deliver
-            complete A–Z building solutions – from architecture and interiors to
-            civil works. With over a decade of expertise, we design and build
-            spaces that combine innovation, functionality, and timeless
-            aesthetics.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Our vision meets exceptional craftsmanship. Discover a new standard
+            in home living with our commitment to quality construction.
           </p>
+        </div>
 
-          {/* Highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-            <div className="p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-bold text-gray-900">
-                🏗️ Our Mission
-              </h3>
-              <p className="text-gray-600 mt-2">
-                To create sustainable, high-quality spaces that inspire trust
-                and add value to every project we undertake.
-              </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {features.map((f, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition"
+            >
+              <div className="mb-4">{f.icon}</div>
+              <h3 className="text-lg font-semibold text-gray-900">{f.title}</h3>
+              <p className="text-sm text-gray-600 mt-2">{f.desc}</p>
             </div>
-            <div className="p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-bold text-gray-900">🌍 Our Vision</h3>
-              <p className="text-gray-600 mt-2">
-                To be recognized as a trusted leader in architecture, interiors,
-                and construction solutions across the region.
-              </p>
+          ))}
+        </div>
+
+        {/* About Company */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <div className="relative w-full h-[350px] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/hero3.jpg" // replace with your own image
+              alt="About JK Builders"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Content */}
+          <div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Award Winning Construction Company in Dubai
+            </h3>
+            <p className="text-gray-700 mb-8">
+              A distinguished and award-winning construction company proudly
+              situated in the heart of Dubai. With a legacy of excellence, we
+              have garnered recognition for our innovative approach.
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6">
+              <div>
+                <p className="text-3xl font-extrabold text-[#C01920]">34+</p>
+                <p className="text-sm text-gray-600">Previous Projects</p>
+              </div>
+              <div>
+                <p className="text-3xl font-extrabold text-[#C01920]">20y+</p>
+                <p className="text-sm text-gray-600">Years Experience</p>
+              </div>
+              <div>
+                <p className="text-3xl font-extrabold text-[#C01920]">12</p>
+                <p className="text-sm text-gray-600">Ongoing Projects</p>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default About;
+export default AboutSection;

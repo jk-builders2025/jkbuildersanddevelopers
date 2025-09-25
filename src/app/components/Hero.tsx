@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const images = [
   "/hero1.jpg",
@@ -13,6 +13,27 @@ const images = [
   "/hero8.jpg",
   "/hero9.jpg",
 ];
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const Hero = () => {
   return (
@@ -54,27 +75,34 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Right Content - Seamless Masonry Auto-Scrolling Grid */}
-        <div className="overflow-hidden h-[500px] rounded-xl shadow-xl">
+        {/* Right Content */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="overflow-hidden h-[500px] rounded-xl shadow-xl"
+        >
           <motion.div
-            animate={{ y: ["0%", "-50%"] }} // only scroll half since we duplicated images
+            className="grid grid-cols-2 gap-3"
+            animate={{ y: ["0%", "-50%"] }}
             transition={{
               duration: 20,
               repeat: Infinity,
               ease: "linear",
+              delay: 1,
             }}
-            className="grid grid-cols-2 gap-3"
           >
             {[...images, ...images].map((src, i) => (
-              <img
+              <motion.img
                 key={i}
                 src={src}
                 alt={`project-${i}`}
                 className="w-full h-[240px] object-cover rounded-lg"
+                variants={imageVariants}
               />
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
