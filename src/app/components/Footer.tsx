@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaTwitter,
@@ -23,24 +24,24 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-white">
+              <Link href="/" className="hover:text-white">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-white">
+              <Link href="/about" className="hover:text-white">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-white">
+              <Link href="/services" className="hover:text-white">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white">
+              <Link href="/contact" className="hover:text-white">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -59,16 +60,16 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
-            <a href="#" className="hover:text-blue-500">
+            <a href="#" className="hover:text-blue-500" target="_blank">
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-blue-400">
+            <a href="#" className="hover:text-blue-400" target="_blank">
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-pink-500">
+            <a href="#" className="hover:text-pink-500" target="_blank">
               <FaInstagram />
             </a>
-            <a href="#" className="hover:text-blue-600">
+            <a href="#" className="hover:text-blue-600" target="_blank">
               <FaLinkedinIn />
             </a>
           </div>

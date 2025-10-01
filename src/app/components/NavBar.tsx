@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation"; // for Next.js 13+
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // get current path
+  const pathname = usePathname();
 
-  // Helper to check if the link is active
   const isActive = (path: string) => pathname === path;
 
   return (
@@ -26,48 +26,32 @@ const NavBar = () => {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex gap-8 text-gray-700 font-medium">
-        <li
-          className={`cursor-pointer hover:text-[#C01920] ${
-            isActive("/") ? "text-[#C01920]" : ""
-          }`}
-        >
-          <a href="/">Home</a>
-        </li>
-        <li
-          className={`cursor-pointer hover:text-[#C01920] ${
-            isActive("/about") ? "text-[#C01920]" : ""
-          }`}
-        >
-          <a href="/about">About us</a>
-        </li>
-        <li
-          className={`cursor-pointer hover:text-[#C01920] ${
-            isActive("/services") ? "text-[#C01920]" : ""
-          }`}
-        >
-          <a href="/services">Services</a>
-        </li>
-        <li
-          className={`cursor-pointer hover:text-[#C01920] ${
-            isActive("/projects") ? "text-[#C01920]" : ""
-          }`}
-        >
-          <a href="/projects">Projects</a>
-        </li>
-        <li
-          className={`cursor-pointer hover:text-[#C01920] ${
-            isActive("/contact") ? "text-[#C01920]" : ""
-          }`}
-        >
-          <a href="/contact">Contact</a>
-        </li>
+        {[
+          { name: "Home", path: "/" },
+          { name: "About us", path: "/about" },
+          { name: "Services", path: "/services" },
+          { name: "Projects", path: "/projects" },
+          { name: "Contact", path: "/contact" },
+        ].map((link) => (
+          <li
+            key={link.name}
+            className={`cursor-pointer hover:text-[#C01920] ${
+              isActive(link.path) ? "text-[#C01920]" : ""
+            }`}
+          >
+            <Link href={link.path}>{link.name}</Link>
+          </li>
+        ))}
       </ul>
 
       {/* Desktop Right Section */}
       <div className="hidden md:flex items-center gap-6">
-        <button className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition">
+        <Link
+          href="/contact"
+          className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition"
+        >
           Contact us
-        </button>
+        </Link>
       </div>
 
       {/* Mobile Hamburger */}
@@ -87,7 +71,7 @@ const NavBar = () => {
             { name: "Projects", path: "/projects" },
             { name: "Contact", path: "/contact" },
           ].map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.path}
               className={`hover:text-[#C01920] ${
@@ -96,11 +80,15 @@ const NavBar = () => {
               onClick={() => setIsOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <button className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition">
+          <Link
+            href="/contact"
+            className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition"
+            onClick={() => setIsOpen(false)}
+          >
             Contact us
-          </button>
+          </Link>
         </div>
       )}
     </nav>
