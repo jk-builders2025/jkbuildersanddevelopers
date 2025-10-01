@@ -2,19 +2,26 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation"; // for Next.js 13+
+import Image from "next/image";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname(); // get current path
 
   // Helper to check if the link is active
-  const isActive = (path: any) => pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="w-full sticky top-0 z-50 shadow-md bg-white px-6 md:px-12 py-4 flex justify-between items-center">
       {/* Logo */}
-      <div className="text-2xl font-bold bg-gradient-to-r from-[#C01920] via-[#6F6765] via-[#EA9C88] to-[#CD4C2F] bg-clip-text text-transparent">
-        JK Builders And Developers
+      <div className="flex items-center">
+        <Image
+          src="/jk-logo.jpg"
+          alt="JK Logo"
+          width={150}
+          height={50}
+          className="object-contain"
+        />
       </div>
 
       {/* Desktop Menu */}
