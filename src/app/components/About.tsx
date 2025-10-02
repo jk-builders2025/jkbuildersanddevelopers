@@ -69,26 +69,26 @@ const AboutSection = () => {
           {/* Content */}
           <div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Award Winning Construction Company in Dubai
+              Award Winning Construction Company in Tamil Nadu
             </h3>
             <p className="text-gray-700 mb-8">
               A distinguished and award-winning construction company proudly
-              situated in the heart of Dubai. With a legacy of excellence, we
-              have garnered recognition for our innovative approach.
+              situated in the heart of Tamil Nadu. With a legacy of excellence,
+              we have garnered recognition for our innovative approach.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div>
-                <p className="text-3xl font-extrabold text-[#C01920]">34+</p>
+                <p className="text-3xl font-extrabold text-[#C01920]">75+</p>
                 <p className="text-sm text-gray-600">Previous Projects</p>
               </div>
               <div>
-                <p className="text-3xl font-extrabold text-[#C01920]">20y+</p>
+                <p className="text-3xl font-extrabold text-[#C01920]">10y+</p>
                 <p className="text-sm text-gray-600">Years Experience</p>
               </div>
               <div>
-                <p className="text-3xl font-extrabold text-[#C01920]">12</p>
+                <p className="text-3xl font-extrabold text-[#C01920]">25+</p>
                 <p className="text-sm text-gray-600">Ongoing Projects</p>
               </div>
             </div>

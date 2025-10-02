@@ -37,25 +37,25 @@ const containerVariants: Variants = {
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[100vh] flex items-center justify-center px-6 md:px-12 bg-white overflow-hidden">
+    <section className="relative w-full h-auto md:h-[100vh] flex items-center justify-center px-6 md:px-12 bg-white overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl items-center relative z-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col justify-center text-left"
+          className="flex flex-col justify-center text-left pt-20 md:pt-0"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-[#C01920]">
+          <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-[#C01920]">
             Complete A–Z Building Solutions
           </h1>
-          <p className="mt-4 text-xl md:text-2xl font-medium text-gray-700 max-w-md">
+          <p className="mt-4 text-lg md:text-2xl font-medium text-gray-700 max-w-md">
             Design, Build, Deliver — Trusted Architecture, Interiors & Civil
             Works
           </p>
 
           {/* Trust Badges */}
-          <div className="mt-6 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-3">
             <span className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg shadow">
               ISO Certified
             </span>
@@ -80,7 +80,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="overflow-hidden h-[500px] rounded-xl shadow-xl"
+          className="overflow-hidden h-[400px] md:h-[500px] rounded-xl shadow-xl"
         >
           <motion.div
             className="grid grid-cols-2 gap-3"
@@ -97,7 +97,7 @@ const Hero = () => {
                 key={i}
                 src={src}
                 alt={`project-${i}`}
-                className="w-full h-[240px] object-cover rounded-lg"
+                className="w-full h-[180px] md:h-[240px] object-cover rounded-lg"
                 variants={imageVariants}
               />
             ))}

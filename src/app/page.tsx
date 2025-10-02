@@ -24,7 +24,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <ConsultationPopup />
-      <ChatBot apiEndpoint="/api/chat" />
+      {/* <ChatBot apiEndpoint="/api/chat" /> */}
       <WhatsAppButton phoneNumber="919876543210" />
     </>
   );

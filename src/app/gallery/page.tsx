@@ -2,12 +2,12 @@
 
 import React from "react";
 import NavBar from "../components/NavBar";
-import ContactPage from "../components/Contact";
+import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsappIcon";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const GalleryPage = () => {
   return (
     <div>
       <NavBar />
@@ -21,7 +21,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-extrabold mb-4"
         >
-          Contact Us
+          Our Gallery
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -30,13 +30,13 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-lg md:text-xl max-w-2xl mx-auto"
         >
-          Have a project in mind? Get in touch with us today. We’re here to turn
-          your vision into reality with expert solutions.
+          Explore our residential, commercial, and interior projects —
+          showcasing the quality, trust, and creativity that define JK Builders.
         </motion.p>
       </section>
 
-      {/* Contact Form + Info Section */}
-      <ContactPage />
+      {/* Gallery Section */}
+      <Gallery />
 
       <Footer />
       <WhatsAppButton phoneNumber="9840364084" />
@@ -44,4 +44,5 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default GalleryPage;
+'0.  '

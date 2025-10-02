@@ -10,53 +10,45 @@ const projects = [
   {
     id: 1,
     name: "Sobha Heartland II Villas",
-    desc: "4 Bedroom Villas for Rent in Al Barsha, 1 Villas, Al Barsha 1, Al Barsha",
-    price: "$189",
-    rating: "4.83",
+    desc: "4 Bedroom Villas for Rent in Al Barsha, Al Barsha 1",
     img: "/hero3.jpg",
   },
   {
     id: 2,
     name: "Mykonos Damac Lagoons",
-    desc: "2 Bedroom Apartment for Rent in Bilqas Residence, Palm Jumeirah",
-    price: "$560",
-    rating: "4.87",
+    desc: "2 Bedroom Apartment in Bilqas Residence, Palm Jumeirah",
     img: "/hero1.jpg",
   },
   {
     id: 3,
     name: "Verdana 2 Residence",
-    desc: "1 Bedroom Apartment for Rent in Continental Tower, Dubai Marina",
-    price: "$231",
-    rating: "4.44",
+    desc: "1 Bedroom Apartment in Continental Tower, Dubai Marina",
     img: "/hero2.jpg",
   },
   {
     id: 4,
     name: "JK Skyline Towers",
     desc: "Luxury 3BHK Apartments in Downtown Dubai with city views.",
-    price: "$450",
-    rating: "4.91",
     img: "/hero4.jpg",
   },
   {
     id: 5,
     name: "Palm Beach Villas",
     desc: "Exclusive beachfront villas with private pools and gardens.",
-    price: "$720",
-    rating: "4.95",
     img: "/hero5.jpg",
   },
 ];
 
 const Projects = () => {
   return (
-    <section className="px-6 md:px-12 lg:px-20 py-12 bg-white">
+    <section className="px-6 md:px-12 lg:px-20 py-16 bg-gray-50">
       {/* Section Heading */}
-      <div className="mb-10">
-        <p className="text-sm text-gray-500">Best projects of the year</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Our recent projects
+      <div className="mb-12 text-center">
+        <p className="text-sm text-gray-500 uppercase tracking-wide">
+          Our Work
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+          Featured Projects
         </h2>
       </div>
 
@@ -66,7 +58,7 @@ const Projects = () => {
         spaceBetween={30}
         slidesPerView={1}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         navigation
@@ -78,9 +70,9 @@ const Projects = () => {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <div className="rounded-2xl shadow-md overflow-hidden bg-white hover:shadow-lg transition">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 bg-white">
               {/* Image */}
-              <div className="relative w-full h-56">
+              <div className="relative w-full h-64">
                 <Image
                   src={project.img}
                   alt={project.name}
@@ -90,24 +82,18 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col justify-between h-[260px]">
+              <div className="p-6 flex flex-col justify-between h-[220px]">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900">
                     {project.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-2">{project.desc}</p>
+                  <p className="text-gray-600 mt-2 text-sm">{project.desc}</p>
                 </div>
 
-                <div className="flex items-center justify-between mt-4">
-                  <div>
-                    <p className="text-base font-semibold text-gray-900">
-                      {project.price}
-                      <span className="text-gray-500 text-sm">/night</span>
-                    </p>
-                    <p className="text-sm text-gray-500">⭐ {project.rating}</p>
-                  </div>
-                  <button className="px-4 py-2 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition">
-                    Book Now
+                {/* CTA Button */}
+                <div className="mt-4">
+                  <button className="px-5 py-2 bg-[#C01920] text-white rounded-full text-sm font-medium hover:bg-red-700 transition">
+                    View Project
                   </button>
                 </div>
               </div>

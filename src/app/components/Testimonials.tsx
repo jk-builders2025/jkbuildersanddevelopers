@@ -68,9 +68,9 @@ const Testimonials = () => {
             end believe uncivil respect. Always get adieus nature day course for
             common.
           </p>
-          <button className="px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-purple-500 to-orange-500 hover:opacity-90 transition">
+          {/* <button className="px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-purple-500 to-orange-500 hover:opacity-90 transition">
             View More
-          </button>
+          </button> */}
         </div>
 
         {/* Right - Animated Testimonials */}
