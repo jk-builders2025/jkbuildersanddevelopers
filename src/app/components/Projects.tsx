@@ -22,13 +22,13 @@ const projects = [
   {
     id: 3,
     name: "Verdana 2 Residence",
-    desc: "1 Bedroom Apartment in Continental Tower, Dubai Marina",
+    desc: "1 Bedroom Apartment in Continental Tower, Marina",
     img: "/hero2.jpg",
   },
   {
     id: 4,
     name: "JK Skyline Towers",
-    desc: "Luxury 3BHK Apartments in Downtown Dubai with city views.",
+    desc: "Luxury 3BHK Apartments in Downtown Tamil Nadu with city views.",
     img: "/hero4.jpg",
   },
   {
