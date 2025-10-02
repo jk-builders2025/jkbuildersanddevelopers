@@ -109,19 +109,19 @@ export default function AboutPage() {
           <div className="space-y-16">
             {[
               {
-                year: "2017",
+                year: "2012",
                 text: "Founded JK Builders with a small but passionate team.",
               },
               {
-                year: "2019",
+                year: "2015",
                 text: "Completed our first 100+ residential projects.",
               },
               {
-                year: "2022",
+                year: "2018",
                 text: "Expanded into commercial construction and large-scale projects.",
               },
               {
-                year: "2024",
+                year: "2022",
                 text: "Recognized as a trusted builder with sustainable practices.",
               },
             ].map((milestone, i) => (
