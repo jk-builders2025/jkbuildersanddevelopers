@@ -49,7 +49,7 @@ const NavBar = () => {
       <div className="hidden md:flex items-center gap-6">
         <Link
           href="/contact"
-          className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition"
+          className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#A8151B] transition"
         >
           Contact us
         </Link>
@@ -57,14 +57,14 @@ const NavBar = () => {
 
       {/* Mobile Hamburger */}
       <div className="md:hidden">
-        <button onClick={() => setIsOpen(!isOpen)}>
+        <button onClick={() => setIsOpen(!isOpen)} className="text-black">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center gap-6 py-6 text-gray-700 font-medium">
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center gap-6 py-6 font-medium">
           {[
             { name: "Home", path: "/" },
             { name: "About us", path: "/about" },
@@ -76,9 +76,9 @@ const NavBar = () => {
             <Link
               key={link.name}
               href={link.path}
-              className={`hover:text-[#C01920] ${
-                isActive(link.path) ? "text-[#C01920]" : ""
-              }`}
+              className={`${
+                isActive(link.path) ? "text-[#C01920]" : "text-black"
+              } hover:text-[#C01920] transition`}
               onClick={() => setIsOpen(false)}
             >
               {link.name}
@@ -86,7 +86,7 @@ const NavBar = () => {
           ))}
           <Link
             href="/contact"
-            className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#CD4C2F] transition"
+            className="px-4 py-2 rounded-xl bg-[#C01920] text-white hover:bg-[#A8151B] transition"
             onClick={() => setIsOpen(false)}
           >
             Contact us

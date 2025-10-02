@@ -53,17 +53,15 @@ export default function ContactPage() {
       <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* LEFT SIDE: Contact Info + Map */}
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Get in Touch
-          </h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold text-black mb-6">Get in Touch</h2>
+          <p className="text-black mb-8">
             Reach out for inquiries, collaborations, or project discussions.
             We’d love to hear from you!
           </p>
 
-          <ul className="space-y-6 text-lg">
+          <ul className="space-y-6 text-lg text-black">
             <li className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-indigo-600 mt-1" />
+              <MapPin className="w-6 h-6 text-[#C01920] mt-1" />
               <span>
                 SF No 181/1A5B1, Sri Balaji Towers, Bangalore Highway, <br />
                 near JP Indian Oil Petrol Bunk, Bayanapalli, <br />
@@ -71,16 +69,19 @@ export default function ContactPage() {
               </span>
             </li>
             <li className="flex items-center gap-4">
-              <Phone className="w-6 h-6 text-indigo-600" />
-              <a href="tel:+919840364084" className="hover:underline">
+              <Phone className="w-6 h-6 text-[#C01920]" />
+              <a
+                href="tel:+919840364084"
+                className="text-black hover:underline"
+              >
                 +91 98403 64084
               </a>
             </li>
             <li className="flex items-center gap-4">
-              <Mail className="w-6 h-6 text-indigo-600" />
+              <Mail className="w-6 h-6 text-[#C01920]" />
               <a
                 href="mailto:jkbuildersanddevelopers@gmail.com"
-                className="hover:underline"
+                className="text-black hover:underline"
               >
                 jkbuildersanddevelopers@gmail.com
               </a>
@@ -92,21 +93,21 @@ export default function ContactPage() {
             <a
               href="https://facebook.com"
               target="_blank"
-              className="text-gray-600 hover:text-indigo-600 transition"
+              className="text-black hover:text-indigo-600 transition"
             >
               <Facebook className="w-6 h-6" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
-              className="text-gray-600 hover:text-pink-600 transition"
+              className="text-black hover:text-pink-600 transition"
             >
               <Instagram className="w-6 h-6" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
-              className="text-gray-600 hover:text-blue-600 transition"
+              className="text-black hover:text-blue-600 transition"
             >
               <Linkedin className="w-6 h-6" />
             </a>
@@ -133,56 +134,54 @@ export default function ContactPage() {
           </h2>
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-black">
                 Name
               </label>
               <input
                 type="text"
                 name="name"
                 required
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:ring-[#C01920] focus:border-[#C01920]"
                 placeholder="Your Name"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-black">
                 Email
               </label>
               <input
                 type="email"
                 name="email"
                 required
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:ring-[#C01920] focus:border-[#C01920]"
                 placeholder="you@example.com"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
               />
             </div>
 
-            {/* ✅ New Phone Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-black">
                 Phone Number
               </label>
               <input
                 type="tel"
                 name="phone"
                 required
-                pattern="[0-9]{10}"
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:ring-[#C01920] focus:border-[#C01920]"
-                placeholder="Enter your phone number"
+                placeholder="+91 98403 64084"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-black">
                 Message
               </label>
               <textarea
                 name="message"
                 rows={4}
                 required
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:ring-[#C01920] focus:border-[#C01920]"
                 placeholder="Write your message..."
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
               />
             </div>
 
