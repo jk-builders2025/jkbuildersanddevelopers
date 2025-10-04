@@ -32,7 +32,6 @@ const NavBar = () => {
           { name: "Services", path: "/services" },
           { name: "Projects", path: "/projects" },
           { name: "Gallery", path: "/gallery" },
-          { name: "Contact", path: "/contact" },
         ].map((link) => (
           <li
             key={link.name}
@@ -71,7 +70,6 @@ const NavBar = () => {
             { name: "Services", path: "/services" },
             { name: "Projects", path: "/projects" },
             { name: "Gallery", path: "/gallery" },
-            { name: "Contact", path: "/contact" },
           ].map((link) => (
             <Link
               key={link.name}
