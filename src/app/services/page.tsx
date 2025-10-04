@@ -69,7 +69,6 @@ export default function ServicesPage() {
       </section>
 
       <Footer />
-      <ConsultationPopup />
       <WhatsAppButton phoneNumber="919876543210" />
     </>
   );
