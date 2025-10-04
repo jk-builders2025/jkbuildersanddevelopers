@@ -91,14 +91,14 @@ export default function ContactPage() {
           {/* Social Media */}
           <div className="flex gap-6 mt-10">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1BHxJiD116/?mibextid=wwXIfr"
               target="_blank"
               className="text-black hover:text-indigo-600 transition"
             >
               <Facebook className="w-6 h-6" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/jk_builders_and_developers?igsh=dm9xMW44azlwZnd0&utm_source=qr"
               target="_blank"
               className="text-black hover:text-pink-600 transition"
             >
@@ -167,7 +167,7 @@ export default function ContactPage() {
                 type="tel"
                 name="phone"
                 required
-                placeholder="+91 98403 64084"
+                placeholder="+91"
                 className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
               />
             </div>

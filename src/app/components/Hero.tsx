@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
+import ConsultationPopup from "./ConsultationPopup"; // import popup
 
 const images = [
   "/hero1.jpg",
@@ -19,23 +20,26 @@ const imageVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const Hero = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  // 👇 Auto-open after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative w-full h-auto md:h-[100vh] flex items-center justify-center px-6 md:px-12 bg-white overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl items-center relative z-10">
@@ -69,7 +73,10 @@ const Hero = () => {
 
           {/* CTA */}
           <div className="mt-8">
-            <button className="px-8 py-4 bg-[#C01920] text-white font-semibold rounded-2xl shadow-lg hover:bg-[#A8151B] transition text-lg">
+            <button
+              onClick={() => setShowPopup(true)} // 👈 manual trigger
+              className="px-8 py-4 bg-[#C01920] text-white font-semibold rounded-2xl shadow-lg hover:bg-[#A8151B] transition text-lg"
+            >
               Request a Quote
             </button>
           </div>
@@ -104,6 +111,12 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Popup Component */}
+      <ConsultationPopup
+        showPopup={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
     </section>
   );
 };

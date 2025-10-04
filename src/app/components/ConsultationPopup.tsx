@@ -1,25 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
 
-const ConsultationPopup = () => {
-  const [showPopup, setShowPopup] = useState(false);
+interface ConsultationPopupProps {
+  showPopup: boolean;
+  onClose: () => void;
+}
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 20000); // 20 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleClose = () => setShowPopup(false);
-
+const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
+  showPopup,
+  onClose,
+}) => {
   if (!showPopup) return null;
 
   return (
     <div
       className="fixed inset-0 flex items-center justify-center z-[9999]"
-      onClick={handleClose} // 👈 backdrop click
+      onClick={onClose}
     >
       {/* Background overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80 backdrop-blur-sm"></div>
@@ -27,11 +22,11 @@ const ConsultationPopup = () => {
       {/* Popup */}
       <div
         className="relative bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md text-center animate-fadeIn z-10"
-        onClick={(e) => e.stopPropagation()} // 👈 stops closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
-          onClick={handleClose}
+          onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl"
         >
           ✕
@@ -56,7 +51,6 @@ const ConsultationPopup = () => {
             value="YOUR_WEB3FORMS_ACCESS_KEY"
           />
 
-          {/* Floating label inputs */}
           <div className="relative">
             <input
               type="text"

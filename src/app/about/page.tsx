@@ -3,11 +3,27 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsappIcon";
-import ConsultationPopup from "../components/ConsultationPopup";
 import { motion } from "framer-motion";
 import AboutSection from "../components/About";
+import { Activity, Zap, Handshake } from "lucide-react";
 
 export default function AboutPage() {
+  const milestones = [
+    {
+      year: "2012",
+      text: "Founded JK Builders with a small but passionate team.",
+    },
+    { year: "2015", text: "Completed our first 100+ residential projects." },
+    {
+      year: "2018",
+      text: "Expanded into commercial construction and large-scale projects.",
+    },
+    {
+      year: "2022",
+      text: "Recognized as a trusted builder with sustainable practices.",
+    },
+  ];
+
   return (
     <>
       <NavBar />
@@ -88,6 +104,7 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
       <AboutSection />
 
       {/* Milestones / Timeline */}
@@ -101,30 +118,12 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="relative max-w-5xl mx-auto">
           {/* Center line */}
           <div className="absolute left-1/2 top-0 w-1 bg-[#C01920] h-full transform -translate-x-1/2"></div>
 
           <div className="space-y-16">
-            {[
-              {
-                year: "2012",
-                text: "Founded JK Builders with a small but passionate team.",
-              },
-              {
-                year: "2015",
-                text: "Completed our first 100+ residential projects.",
-              },
-              {
-                year: "2018",
-                text: "Expanded into commercial construction and large-scale projects.",
-              },
-              {
-                year: "2022",
-                text: "Recognized as a trusted builder with sustainable practices.",
-              },
-            ].map((milestone, i) => (
+            {milestones.map((milestone, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -80 : 80 }}
@@ -139,7 +138,7 @@ export default function AboutPage() {
                 <div
                   className={`w-full md:w-1/2 p-6 rounded-2xl shadow-md bg-white border border-gray-100 ${
                     i % 2 === 0 ? "mr-auto text-right" : "ml-auto text-left"
-                  }`}
+                  } text-center md:text-inherit`}
                 >
                   <h4 className="text-xl font-bold text-[#C01920] mb-2">
                     {milestone.year}
@@ -147,8 +146,8 @@ export default function AboutPage() {
                   <p className="text-gray-700">{milestone.text}</p>
                 </div>
 
-                {/* Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#C01920] shadow-lg"></div>
+                {/* Dot - visible only on md+ */}
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#C01920] shadow-lg"></div>
               </motion.div>
             ))}
           </div>
@@ -169,16 +168,19 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
-              title: "🏗️ Expertise",
+              title: "Expertise",
               text: "Decades of hands-on experience in residential, commercial, and civil projects.",
+              icon: <Activity size={28} className="text-[#C01920]" />,
             },
             {
-              title: "⚡ Innovation",
+              title: "Innovation",
               text: "Modern design, cutting-edge techniques, and sustainable practices.",
+              icon: <Zap size={28} className="text-[#C01920]" />,
             },
             {
-              title: "🤝 Reliability",
+              title: "Reliability",
               text: "On-time delivery, transparent processes, and long-term client relationships.",
+              icon: <Handshake size={28} className="text-[#C01920]" />,
             },
           ].map((item, i) => (
             <motion.div
@@ -190,7 +192,15 @@ export default function AboutPage() {
               whileHover={{ scale: 1.05 }}
               className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-2xl transition"
             >
-              <h4 className="text-xl font-bold mb-3">{item.title}</h4>
+              {/* Icon */}
+              <div className="mb-4">{item.icon}</div>
+
+              {/* Title */}
+              <h4 className="text-xl font-bold mb-3 text-gray-900">
+                {item.title}
+              </h4>
+
+              {/* Description */}
               <p className="text-gray-600">{item.text}</p>
             </motion.div>
           ))}
@@ -227,7 +237,6 @@ export default function AboutPage() {
       </section>
 
       <Footer />
-      <ConsultationPopup />
       <WhatsAppButton phoneNumber="919876543210" />
     </>
   );

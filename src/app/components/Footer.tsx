@@ -83,7 +83,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-5 text-xl">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1BHxJiD116/?mibextid=wwXIfr"
               className="hover:text-blue-500 transition"
               target="_blank"
             >
@@ -97,7 +97,7 @@ const Footer = () => {
               <FaTwitter />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/jk_builders_and_developers?igsh=dm9xMW44azlwZnd0&utm_source=qr"
               className="hover:text-pink-500 transition"
               target="_blank"
             >

@@ -23,7 +23,7 @@ export default function Home() {
       {/* <Profiles /> */}
       <Contact />
       <Footer />
-      <ConsultationPopup />
+      {/* <ConsultationPopup /> */}
       {/* <ChatBot apiEndpoint="/api/chat" /> */}
       <WhatsAppButton phoneNumber="919840364084" />
     </>
