@@ -84,74 +84,80 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Milestones / Timeline */}
-        <section className="py-20 px-6 lg:px-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Our Journey
-            </h2>
-            <p className="text-gray-600">
-              From humble beginnings to trusted builders — here’s our story.
-            </p>
-          </div>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical Line Animation */}
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-[#C01920] to-[#CD4C2F] transform -translate-x-1/2 rounded-full"
+          ></motion.div>
 
-          {/* Timeline */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Center line */}
-            <div className="absolute left-1/2 top-0 w-1 bg-[#C01920] h-full transform -translate-x-1/2"></div>
-
-            <div className="space-y-16">
-              {[
-                {
-                  year: "2012",
-                  text: "Founded JK Builders with a small but passionate team.",
-                },
-                {
-                  year: "2015",
-                  text: "Completed our first 100+ residential projects.",
-                },
-                {
-                  year: "2018",
-                  text: "Expanded into commercial construction and large-scale projects.",
-                },
-                {
-                  year: "2022",
-                  text: "Recognized as a trusted builder with sustainable practices.",
-                },
-              ].map((milestone, i) => (
+          <div className="space-y-20 relative">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                custom={index % 2 === 0 ? "left" : "right"}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+                className={`flex flex-col md:flex-row items-center gap-6 relative ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Connector Dot with Pulse */}
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -80 : 80 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: [1.2, 1], opacity: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    repeat: 1,
+                    repeatType: "reverse",
+                  }}
                   viewport={{ once: true }}
-                  className={`relative flex md:items-center ${
-                    i % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                  }`}
-                >
-                  {/* Card */}
-                  <div
-                    className={`w-full md:w-1/2 p-6 rounded-2xl shadow-md bg-white border border-gray-100
-              ${
-                i % 2 === 0
-                  ? "md:mr-auto md:text-right"
-                  : "md:ml-auto md:text-left"
-              }
-              text-center md:text-inherit`}
-                  >
-                    <h4 className="text-xl font-bold text-[#C01920] mb-2">
-                      {milestone.year}
-                    </h4>
-                    <p className="text-gray-700">{milestone.text}</p>
-                  </div>
+                  className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-[#C01920] bg-white shadow-lg z-10"
+                ></motion.div>
 
-                  {/* Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#C01920] shadow-lg"></div>
+                {/* Card */}
+                <motion.div
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
+                  }}
+                  className="bg-white text-black rounded-xl shadow-md p-6 w-full md:w-1/2 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="relative w-16 h-16 rounded-lg overflow-hidden shadow-md">
+                      <Image
+                        src={service.img}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {service.desc}
+                  </p>
+
+                  {/* CTA Button */}
+                  <a
+                    href="/contact"
+                    className="inline-block px-5 py-2 bg-[#C01920] text-white font-medium rounded-lg shadow hover:bg-[#a3161a] transition"
+                  >
+                    Get a Free Consultation
+                  </a>
                 </motion.div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );
