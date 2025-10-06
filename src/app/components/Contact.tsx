@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Mail,
   Phone,
@@ -12,37 +12,41 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
     const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData.entries());
+    formData.append("access_key", "e834c975-fc89-4fe5-b334-eaed699538e7");
 
     toast.loading("Sending message...", { id: "submitToast" });
+    setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       });
+
       const result = await res.json();
 
       if (result.success) {
-        toast.success("Message sent successfully!", { id: "submitToast" });
+        toast.success("Message sent successfully! 🎉", { id: "submitToast" });
         formRef.current.reset();
       } else {
-        toast.error(result.message || "Failed to send message", {
+        toast.error(result.message || "Failed to send message 😕", {
           id: "submitToast",
         });
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.", {
+      console.error("Form submission error:", error);
+      toast.error("An error occurred. Please try again later.", {
         id: "submitToast",
       });
-      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -142,7 +146,7 @@ export default function ContactPage() {
                 name="name"
                 required
                 placeholder="Your Name"
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920] transition-all"
               />
             </div>
 
@@ -155,7 +159,7 @@ export default function ContactPage() {
                 name="email"
                 required
                 placeholder="you@example.com"
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920] transition-all"
               />
             </div>
 
@@ -168,7 +172,7 @@ export default function ContactPage() {
                 name="phone"
                 required
                 placeholder="+91"
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920] transition-all"
               />
             </div>
 
@@ -181,15 +185,18 @@ export default function ContactPage() {
                 rows={4}
                 required
                 placeholder="Write your message..."
-                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920]"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 text-black placeholder-black focus:ring-[#C01920] focus:border-[#C01920] transition-all"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-[#C01920] hover:bg-[#a0151a] transition-colors duration-300 text-white font-semibold py-3 rounded-lg shadow-lg"
+              disabled={loading}
+              className={`w-full bg-[#C01920] hover:bg-[#a0151a] transition-colors duration-300 text-white font-semibold py-3 rounded-lg shadow-lg ${
+                loading ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
