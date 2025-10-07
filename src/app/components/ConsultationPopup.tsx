@@ -1,5 +1,8 @@
 "use client";
 
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 interface ConsultationPopupProps {
   showPopup: boolean;
   onClose: () => void;
@@ -9,91 +12,131 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
   showPopup,
   onClose,
 }) => {
+  const [loading, setLoading] = useState(false);
+
   if (!showPopup) return null;
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    const toastId = toast.loading("Sending...", { id: "consultToast" });
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        toast.success("Message sent successfully!", { id: toastId });
+        e.currentTarget.reset();
+        setTimeout(() => {
+          onClose(); // Close popup automatically
+        }, 1500);
+      } else {
+        toast.error(result.message || "Failed to send message", {
+          id: toastId,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred. Please try again.", { id: toastId });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center z-[9999]"
-      onClick={onClose}
-    >
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80 backdrop-blur-sm"></div>
-
-      {/* Popup */}
+    <>
+      <Toaster position="top-right" />
       <div
-        className="relative bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md text-center animate-fadeIn z-10"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed inset-0 flex items-center justify-center z-[9999]"
+        onClick={onClose}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl"
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80 backdrop-blur-sm"></div>
+
+        {/* Popup */}
+        <div
+          className="relative bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md text-center animate-fadeIn z-10"
+          onClick={(e) => e.stopPropagation()}
         >
-          ✕
-        </button>
-
-        <h2 className="text-2xl font-bold text-gray-800 mb-3">
-          🎉 Get a Free Consultation
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Let us help you grow your business with expert solutions.
-        </p>
-
-        {/* Form */}
-        <form
-          action="https://api.web3forms.com/submit"
-          method="POST"
-          className="space-y-5"
-        >
-          <input
-            type="hidden"
-            name="access_key"
-            value="YOUR_WEB3FORMS_ACCESS_KEY"
-          />
-
-          <div className="relative">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
-              placeholder="Your Name"
-            />
-            <label
-              htmlFor="name"
-              className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1"
-            >
-              Your Name
-            </label>
-          </div>
-
-          <div className="relative">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
-              placeholder="Your Email"
-            />
-            <label
-              htmlFor="email"
-              className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1"
-            >
-              Your Email
-            </label>
-          </div>
-
+          {/* Close Button */}
           <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition transform hover:scale-105"
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl"
           >
-            Get Free Consultation
+            ✕
           </button>
-        </form>
+
+          <h2 className="text-2xl font-bold text-gray-800 mb-3">
+            🎉 Get a Free Consultation
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Let us help you grow your business with expert solutions.
+          </p>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <input
+              type="hidden"
+              name="access_key"
+              value="70a81ca7-d4d1-4364-9601-0d158e1763ec"
+            />
+
+            <div className="relative">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
+                placeholder="Your Name"
+                disabled={loading}
+              />
+              <label
+                htmlFor="name"
+                className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1"
+              >
+                Your Name
+              </label>
+            </div>
+
+            <div className="relative">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
+                placeholder="Your Email"
+                disabled={loading}
+              />
+              <label
+                htmlFor="email"
+                className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1"
+              >
+                Your Email
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? "Sending..." : "Get Free Consultation"}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
