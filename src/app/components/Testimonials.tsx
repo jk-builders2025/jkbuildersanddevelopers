@@ -7,39 +7,39 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "yokash yok",
-    text: "The best construction and architectural firm in krishnagiri . They are young dynamic and innovative in designing the buildings as per clients requirements and keeping in mind the aesthetics. Highly recommended for large scale projects also ",
+    name: "Yokash Yok",
+    text: "The best construction and architectural firm in Krishnagiri. They are young, dynamic, and innovative in designing buildings as per client requirements while maintaining aesthetics. Highly recommended for large-scale projects as well.",
     img: "/testimonials/user1.png",
   },
   {
     id: 2,
-    name: "vinish jkv",
-    text: "A builder with a reputation for being transparent and customer friendly, they have a dedicated team for every department to ensure that quality is uncompromised. For JK builders, it’s not merely a contract or sale but a relation, in which they ensure that they address any issue we may face at any point of time. I would definitely recommendJK builders and developers to all property buyers and the builder you can trust.",
+    name: "Vinish JKV",
+    text: "A builder with a reputation for being transparent and customer-friendly. JK Builders ensures quality is never compromised, with dedicated teams for each department. They value long-term relationships over transactions — highly trustworthy!",
     img: "/testimonials/user2.png",
     highlight: true,
   },
   {
     id: 3,
-    name: "Anitha Ceo",
-    text: "I am highly impressed with the professionalism and quality of work provided by this building company. From the initial consultation to the completion of the project, their team demonstrated exceptional skill, efficiency, and attention to detail",
+    name: "Anitha CEO",
+    text: "I’m highly impressed with the professionalism and quality of work. From consultation to completion, the team demonstrated exceptional skill, efficiency, and attention to detail. Truly reliable professionals.",
     img: "/testimonials/user3.png",
   },
   {
     id: 4,
-    name: "kathir basha",
-    text: "JK Builders is very trustful workers their designs are unqie and they maintain their punctuality their work finishing is perfect i'm statisfied their work",
+    name: "Kathir Basha",
+    text: "JK Builders is very trustworthy. Their designs are unique, they maintain punctuality, and their finishing work is perfect. I’m completely satisfied with their work.",
     img: "/testimonials/user4.png",
   },
   {
     id: 5,
     name: "Vinoth Kumar",
-    text: "Quality and Client satisfaction is their main priority, friendly Engineer and their team. I am really satisfied on how they finished my home. They are also technical strong. They are best in the town and highly recommend",
+    text: "Quality and client satisfaction are their top priorities. Friendly engineers, strong technical knowledge, and excellent execution. They truly are the best in town!",
     img: "/testimonials/user6.png",
   },
   {
     id: 6,
     name: "Hari Prasad",
-    text: "If you are in need of unique,Trendy & Stylish house but at the same time cost effective Construction and interiors you can trust JK builders. Highly recommended",
+    text: "If you’re looking for trendy, stylish, yet cost-effective construction and interiors, JK Builders is the one to trust. Highly recommended for modern home design.",
     img: "/testimonials/user5.png",
   },
 ];
@@ -47,7 +47,7 @@ const testimonials = [
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
 
-  // Auto change every 4 seconds
+  // Auto slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -56,40 +56,37 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            What Our <br /> Customers Says
+    <section className="w-full py-16 md:py-20 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        {/* LEFT CONTENT */}
+        <div className="text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
+            What Our <br className="hidden md:block" /> Customers Say
           </h2>
-          <p className="text-gray-500 mb-6 max-w-md">
-            Relation so in confined smallest children unpacked delicate. Why sir
-            end believe uncivil respect. Always get adieus nature day course for
-            common.
+          <p className="text-gray-600 mb-8 max-w-md mx-auto md:mx-0 text-sm sm:text-base">
+            We take pride in building relationships that last. Here’s what some
+            of our happy clients have to say about their experience with JK
+            Builders and Developers.
           </p>
-          {/* <button className="px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-purple-500 to-orange-500 hover:opacity-90 transition">
-            View More
-          </button> */}
         </div>
 
-        {/* Right - Animated Testimonials */}
-        <div className="relative h-48 flex items-center overflow-hidden">
+        {/* RIGHT CONTENT - Animated Testimonials */}
+        <div className="relative flex items-center justify-center h-auto min-h-[280px] sm:min-h-[260px] md:h-52 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={testimonials[index].id}
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-              className={`flex items-start gap-4 bg-white shadow-md rounded-xl p-5 w-full relative ${
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 bg-white shadow-lg rounded-2xl p-6 w-full max-w-lg relative ${
                 testimonials[index].highlight
-                  ? "border-l-4 border-l-purple-500"
+                  ? "border-l-4 border-l-[#C01920]"
                   : "border border-gray-100"
               }`}
             >
               {/* Avatar */}
-              <div className="w-14 h-14 rounded-full overflow-hidden relative flex-shrink-0">
+              <div className="w-16 h-16 sm:w-14 sm:h-14 rounded-full overflow-hidden relative flex-shrink-0">
                 <Image
                   src={testimonials[index].img}
                   alt={testimonials[index].name}
@@ -98,22 +95,22 @@ const Testimonials = () => {
                 />
               </div>
 
-              {/* Text */}
-              <div className="flex-1">
+              {/* Text Content */}
+              <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   {testimonials[index].name}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                   {testimonials[index].text}
                 </p>
               </div>
 
               {/* Quote Icon */}
               <Quote
-                size={20}
-                className={`absolute top-4 right-4 ${
+                size={22}
+                className={`absolute top-5 right-5 ${
                   testimonials[index].highlight
-                    ? "text-purple-500"
+                    ? "text-[#C01920]"
                     : "text-gray-300"
                 }`}
               />
@@ -123,7 +120,7 @@ const Testimonials = () => {
       </div>
 
       {/* Decorative Doodle */}
-      <div className="absolute -top-6 right-10 w-20 h-20">
+      <div className="absolute -top-6 right-10 w-16 h-16 sm:w-20 sm:h-20 opacity-30">
         <Image
           src="/decor/star-doodle.svg"
           alt="decorative doodle"

@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ConsultationPopup from "./components/ConsultationPopup";
 import WhatsAppButton from "./components/WhatsappIcon";
 import ChatBot from "./components/ChatBot";
+import UniqueSection from "./components/UniqueSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <UniqueSection />
       <Services />
       <Testimonials />
       {/* <Profiles /> */}

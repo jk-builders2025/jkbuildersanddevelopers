@@ -74,7 +74,7 @@ const Footer = () => {
               Krishnagiri, Tamil Nadu 635002
             </li>
             <li>📞 +91 98403 64084</li>
-            <li>✉️ jkbuildersanddevelopers@gmail.com</li>
+            <li>✉️ info@jkbuildersanddevelopers.com</li>
           </ul>
         </div>
 

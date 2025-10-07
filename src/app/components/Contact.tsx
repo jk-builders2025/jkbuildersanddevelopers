@@ -87,7 +87,7 @@ export default function ContactPage() {
                 href="mailto:jkbuildersanddevelopers@gmail.com"
                 className="text-black hover:underline"
               >
-                jkbuildersanddevelopers@gmail.com
+                info@jkbuildersanddevelopers.com
               </a>
             </li>
           </ul>

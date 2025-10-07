@@ -6,39 +6,39 @@ import { motion, Variants } from "framer-motion";
 const services = [
   {
     id: 1,
-    title: "Residential Construction",
-    desc: "Turn your dream home into reality with tailored designs, durable materials, and attention to every detail — so you can live comfortably for generations.",
-    img: "/hero8.jpg",
-  },
-  {
-    id: 2,
-    title: "Commercial Builds & Remodeling",
-    desc: "Boost your business with smart, functional, and stylish commercial spaces that impress clients, inspire employees, and maximize efficiency.",
-    img: "/hero3.jpg",
-  },
-  {
-    id: 3,
-    title: "Excavation & Site Preparation",
-    desc: "Lay a solid foundation for your project with precise excavation, land clearing, and grading services powered by advanced machinery and skilled operators.",
-    img: "/hero2.jpg",
-  },
-  {
-    id: 4,
-    title: "Interior Design & Renovation",
-    desc: "Transform interiors into modern, functional, and elegant spaces. From custom kitchens to luxury living rooms — we bring your vision to life.",
-    img: "/hero1.jpg",
-  },
-  {
-    id: 5,
     title: "Architectural Design & Planning",
     desc: "Build smarter with innovative, sustainable, and compliant designs by our expert architects — ensuring beauty meets functionality at every stage.",
     img: "/hero7.jpg",
   },
   {
+    id: 2,
+    title: "Residential Construction",
+    desc: "Turn your dream home into reality with tailored designs, durable materials, and attention to every detail — so you can live comfortably for generations.",
+    img: "/hero8.jpg",
+  },
+  {
+    id: 3,
+    title: "Commercial Builds",
+    desc: "Boost your business with smart, functional, and stylish commercial spaces that impress clients, inspire employees, and maximize efficiency.",
+    img: "/hero3.jpg",
+  },
+  {
+    id: 4,
+    title: "Hospitality",
+    desc: "Keep your property in prime condition with our ongoing maintenance and facility management solutions — saving you time, stress, and money.",
+    img: "/hero6.jpg",
+  },
+  {
+    id: 5,
+    title: "Interior Design & Renovation",
+    desc: "Transform interiors into modern, functional, and elegant spaces. From custom kitchens to luxury living rooms — we bring your vision to life..",
+    img: "/hero3.jpg",
+  },
+  {
     id: 6,
     title: "Roadworks & Infrastructure",
     desc: "From roads to large-scale infrastructure, our precision-driven approach ensures durability, safety, and long-term reliability for communities.",
-    img: "/hero3.jpg",
+    img: "/hero6.jpg",
   },
   {
     id: 7,
