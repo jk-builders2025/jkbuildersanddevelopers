@@ -118,16 +118,10 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
               id="name"
               required
               disabled={loading}
-              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
+              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-black"
               placeholder="Your Name"
               aria-label="Your name"
             />
-            <label
-              htmlFor="name"
-              className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1 pointer-events-none"
-            >
-              Your Name
-            </label>
           </div>
 
           <div className="relative">
@@ -137,16 +131,10 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
               id="email"
               required
               disabled={loading}
-              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-transparent"
+              className="peer w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-black"
               placeholder="Your Email"
               aria-label="Your email"
             />
-            <label
-              htmlFor="email"
-              className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-blue-600 bg-white px-1 pointer-events-none"
-            >
-              Your Email
-            </label>
           </div>
 
           <button

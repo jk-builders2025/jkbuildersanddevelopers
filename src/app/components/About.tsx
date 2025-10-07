@@ -30,22 +30,20 @@ const features = [
 
 // 🏗️ Example Project Lists
 const previousProjects = [
-  "JK Residency - Krishnagiri",
-  "Royal Enclave Villas - Hosur",
-  "Sunshine Apartments - Salem",
-  "Elite Tower - Chennai",
-  "Emerald Business Park - Vellore",
-  "Hillside Premium Homes - Dharmapuri",
-  "Golden Leaf Commercial Complex - Coimbatore",
+  "Project1 - Residential",
+  "Project2 - Commercial",
+  "Project3 - Industrial",
+  "Project4 - Residential",
+  "Project5 - Commercial",
+  "Project6 - Industrial",
 ];
 
 const ongoingProjects = [
-  "JK Grand Hotel - Krishnagiri",
-  "Skyline Apartments - Hosur",
-  "Signature Villas - Salem",
-  "Ocean View Resort - ECR Chennai",
-  "Eco Smart Township - Madurai",
-  "Urban Heights - Trichy",
+  "Ongoing Project1",
+  "Ongoing Project2",
+  "Ongoing Project3",
+  "Ongoing Project4",
+  "Ongoing Project5",
 ];
 
 const AboutSection = () => {
