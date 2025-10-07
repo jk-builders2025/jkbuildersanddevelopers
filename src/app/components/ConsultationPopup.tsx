@@ -31,16 +31,22 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+
+      // Ensure JSON parsing
       const result = await res.json();
 
-      if (result.success) {
-        toast.success("Message sent successfully!", { id: toastId });
+      if (result?.success) {
+        toast.success(result.message || "Message sent successfully!", {
+          id: toastId,
+        });
         e.currentTarget.reset();
+
+        // Close popup after 1.5s
         setTimeout(() => {
-          onClose(); // Close popup automatically
+          onClose();
         }, 1500);
       } else {
-        toast.error(result.message || "Failed to send message", {
+        toast.error(result?.message || "Failed to send message", {
           id: toastId,
         });
       }
@@ -90,6 +96,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
               value="70a81ca7-d4d1-4364-9601-0d158e1763ec"
             />
 
+            {/* Name input */}
             <div className="relative">
               <input
                 type="text"
@@ -108,6 +115,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
               </label>
             </div>
 
+            {/* Email input */}
             <div className="relative">
               <input
                 type="email"
