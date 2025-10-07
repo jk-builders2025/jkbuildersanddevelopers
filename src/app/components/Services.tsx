@@ -8,25 +8,25 @@ const services = [
     id: 1,
     title: "Architectural Design & Planning",
     desc: "Build smarter with innovative, sustainable, and compliant designs by our expert architects — ensuring beauty meets functionality at every stage.",
-    img: "/hero7.jpg",
+    img: "/hero3.jpg",
   },
   {
     id: 2,
     title: "Residential Construction",
     desc: "Turn your dream home into reality with tailored designs, durable materials, and attention to every detail — so you can live comfortably for generations.",
-    img: "/hero8.jpg",
+    img: "/residential.jpg",
   },
   {
     id: 3,
     title: "Commercial Builds",
     desc: "Boost your business with smart, functional, and stylish commercial spaces that impress clients, inspire employees, and maximize efficiency.",
-    img: "/hero3.jpg",
+    img: "/commercial.jpg",
   },
   {
     id: 4,
     title: "Hospitality",
     desc: "Keep your property in prime condition with our ongoing maintenance and facility management solutions — saving you time, stress, and money.",
-    img: "/hero6.jpg",
+    img: "/hospitality.jpg",
   },
   {
     id: 5,
@@ -38,13 +38,13 @@ const services = [
     id: 6,
     title: "Roadworks & Infrastructure",
     desc: "From roads to large-scale infrastructure, our precision-driven approach ensures durability, safety, and long-term reliability for communities.",
-    img: "/hero6.jpg",
+    img: "/road.jpg",
   },
   {
     id: 7,
     title: "Maintenance & Facility Management",
     desc: "Keep your property in prime condition with our ongoing maintenance and facility management solutions — saving you time, stress, and money.",
-    img: "/hero6.jpg",
+    img: "/maintance.jpg",
   },
 ];
 
