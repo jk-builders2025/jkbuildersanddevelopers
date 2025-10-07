@@ -8,6 +8,11 @@ interface ConsultationPopupProps {
   onClose: () => void;
 }
 
+interface Web3FormResponse {
+  success: boolean;
+  message?: string;
+}
+
 const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
   showPopup,
   onClose,
@@ -20,8 +25,8 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
     e.preventDefault();
     setLoading(true);
 
-    // Save the form reference BEFORE any await (fixes the "reset is null" error)
-    const form = e.currentTarget as HTMLFormElement;
+    // keep form reference
+    const form = e.currentTarget;
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
@@ -39,34 +44,23 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
         }),
       });
 
-      // Safely parse JSON
-      let result: any = { success: false, message: "Unknown response" };
+      let result: Web3FormResponse = { success: false };
+
+      // Try parsing JSON safely
       try {
-        result = await res.json();
-      } catch (err) {
-        // parsing failed — ignore, result falls back to default
+        result = (await res.json()) as Web3FormResponse;
+      } catch {
+        // ignore parse errors
       }
 
-      // Use result.success returned by Web3Forms (reliable)
-      if (result?.success) {
+      if (result.success) {
         toast.success(result.message || "Message sent successfully!", {
           id: toastId,
         });
-
-        // reset using saved form reference
-        try {
-          form.reset();
-        } catch (err) {
-          // ignore if reset fails
-          console.warn("Form reset failed:", err);
-        }
-
-        // auto-close after a short delay so user sees success toast
-        setTimeout(() => {
-          onClose();
-        }, 1400);
+        form.reset();
+        setTimeout(onClose, 1400);
       } else {
-        toast.error(result?.message || "Failed to send message", {
+        toast.error(result.message || "Failed to send message", {
           id: toastId,
         });
       }
