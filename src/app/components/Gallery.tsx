@@ -14,9 +14,9 @@ const projects = [
   {
     id: 1,
     category: "Before & After",
-    before: "/before1.jpg",
-    after: "/sri_vasam/elevation1.jpg",
-    title: "Sri Vasam - Hotel",
+    before: "/before.jpg",
+    after: "/after.jpg",
+    title: "Residential",
   },
   {
     id: 2,
