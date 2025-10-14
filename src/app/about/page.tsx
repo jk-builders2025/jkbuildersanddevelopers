@@ -4,10 +4,47 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsappIcon";
 import { motion } from "framer-motion";
+import { Award, Users } from "lucide-react";
+import Image from "next/image";
 import AboutSection from "../components/About";
-import { Activity, Zap, Handshake } from "lucide-react";
 
 export default function AboutPage() {
+  const founder = {
+    name: "Kavi Arasu",
+    title: "Founder & Managing Director",
+    image: "/founder.jpg",
+    desc: "Kavi Arasu, the visionary behind JK Builders & Developers, is an IIT Kanpur certified professional, Nakshatra Award recipient, and a proud BNI member. His leadership combines innovation, precision, and passion for excellence in construction and design.",
+  };
+
+  const DesignTeamMembers = [
+    {
+      name: "Haripriya",
+      role: "Interior Designer",
+      image: "/design/haripriya.jpeg",
+    },
+    { name: "Florance", role: "Architect", image: "/design/florance.png" },
+    {
+      name: "Dhanalakshmi",
+      role: "Interior Designer",
+      image: "/design/dhanalakshmi.jpg",
+    },
+  ];
+
+  const CivilTeamMembers = [
+    {
+      name: "Poovarasan",
+      role: "Site Engineer",
+      image: "/site/poovarasan.jpg",
+    },
+    {
+      name: "Babil Nathan",
+      role: "Site Engineer",
+      image: "/site/babilnathan.jpg",
+    },
+    { name: "Prasana", role: "Site Engineer", image: "/site/prasana.png" },
+    { name: "Balaji", role: "Site Engineer", image: "/site/balaji.jpeg" },
+  ];
+
   const milestones = [
     {
       year: "2017",
@@ -28,14 +65,14 @@ export default function AboutPage() {
     <>
       <NavBar />
 
-      {/* Hero Section */}
-      <section className="relative w-full bg-gradient-to-r from-[#C01920] via-[#EA9C88] to-[#6F6765] text-white py-28 text-center overflow-hidden">
+      {/* ✅ HERO */}
+      <section className="relative w-full bg-gradient-to-r from-[#C01920] via-[#EA9C88] to-[#6F6765] text-white py-20 md:py-28 text-center px-4 overflow-hidden">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-extrabold mb-4"
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-3 sm:mb-4 leading-tight"
         >
           About Us
         </motion.h1>
@@ -44,177 +81,223 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-lg md:text-xl max-w-2xl mx-auto"
+          className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-2"
         >
           Building trust, innovation, and excellence — one project at a time.
         </motion.p>
       </section>
 
-      {/* Company Story */}
-      <section className="py-20 px-6 lg:px-20 bg-gray-50">
+      {/* ✅ VIDEO SECTION */}
+      <section className="relative w-full h-[60vh] sm:h-[80vh] overflow-hidden">
+        <video
+          src="/awards-ceremony.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 flex flex-col justify-center items-center text-center text-white px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3"
+          >
+            Recognition & Awards
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-xl text-sm sm:text-base md:text-lg text-gray-200"
+          >
+            Celebrating milestones and honors that reflect our commitment to
+            quality and excellence.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ✅ MISSION & VISION */}
+      <section className="py-16 px-4 sm:px-6 bg-gray-50 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Who We Are
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
+            Our Mission & Vision
           </h2>
-          <p className="text-gray-700 leading-relaxed text-lg">
-            At <span className="font-semibold text-[#C01920]">JK Builders</span>
-            , we’ve been delivering A–Z construction solutions for over a
-            decade. From residential villas to large-scale commercial projects,
-            our commitment is simple:{" "}
-            <span className="font-semibold">
-              quality, sustainability, and customer satisfaction
-            </span>
-            .
-          </p>
+          <div className="grid gap-8 md:grid-cols-2 text-left">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl border-t-4 border-[#C01920]">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#C01920] mb-3">
+                Our Mission
+              </h3>
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                To create sustainable, high-quality spaces that inspire trust
+                and add value to every project we undertake.
+              </p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl border-t-4 border-[#EA9C88]">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#C01920] mb-3">
+                Our Vision
+              </h3>
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                To be recognized as a trusted leader in architecture, interiors,
+                and construction solutions across the region.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 px-6 lg:px-20 bg-white">
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {[
-            {
-              title: "Our Mission",
-              text: "To create sustainable, high-quality spaces that inspire trust and add value to every project we undertake.",
-            },
-            {
-              title: "Our Vision",
-              text: "To be recognized as a trusted leader in architecture, interiors, and construction solutions across the region.",
-            },
-          ].map((item, i) => (
+      {/* ✅ FOUNDER */}
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-r from-white to-gray-50">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative h-[350px] sm:h-[450px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <Image
+              src={founder.image}
+              alt={founder.name}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center md:text-left"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-[#C01920]">
+              {founder.name}
+            </h2>
+            <p className="text-gray-700 font-medium mb-3 text-base sm:text-lg">
+              {founder.title}
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-5 text-sm text-gray-700">
+              <span className="flex items-center gap-2">
+                <Award size={18} className="text-[#C01920]" /> Nakshatra Award
+              </span>
+              <span className="flex items-center gap-2">
+                <Users size={18} className="text-[#C01920]" /> BNI Member
+              </span>
+            </div>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+              {founder.desc}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ✅ TEAM SECTIONS */}
+      <section className="py-16 px-4 sm:px-6 bg-white text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
+          Design & Architecture Team
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {DesignTeamMembers.map((m, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-white shadow-xl border border-gray-100 backdrop-blur-md hover:shadow-2xl transition transform hover:-translate-y-2"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="relative rounded-2xl overflow-hidden shadow-md group"
             >
-              <h3 className="text-2xl font-bold mb-4 text-[#C01920]">
-                {item.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">{item.text}</p>
+              <Image
+                src={m.image}
+                alt={m.name}
+                width={500}
+                height={600}
+                className="w-full h-[400px] sm:h-[500px] object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all flex flex-col justify-end text-white p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold">{m.name}</h3>
+                <p className="text-sm text-[#EA9C88]">{m.role}</p>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <AboutSection />
-
-      {/* Milestones / Timeline */}
-      <section className="py-20 px-6 lg:px-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Our Journey
-          </h2>
-          <p className="text-gray-600">
-            From humble beginnings to trusted builders — here’s our story.
-          </p>
+      <section className="py-16 px-4 sm:px-6 bg-gray-50 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
+          Site Engineering Team
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {CivilTeamMembers.map((m, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="relative rounded-2xl overflow-hidden shadow-md group"
+            >
+              <Image
+                src={m.image}
+                alt={m.name}
+                width={500}
+                height={600}
+                className="w-full h-[380px] sm:h-[450px] object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all flex flex-col justify-end text-white p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold">{m.name}</h3>
+                <p className="text-sm text-[#EA9C88]">{m.role}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </section>
 
+      {/* ✅ TIMELINE */}
+      <section className="py-20 px-4 sm:px-6 bg-white text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
+          Our Journey
+        </h2>
         <div className="relative max-w-5xl mx-auto">
-          {/* Center line */}
-          <div className="absolute left-1/2 top-0 w-1 bg-[#C01920] h-full transform -translate-x-1/2"></div>
-
-          <div className="space-y-16">
-            {milestones.map((milestone, i) => (
+          <div className="hidden md:block absolute left-1/2 top-0 w-1 bg-[#C01920] h-full transform -translate-x-1/2"></div>
+          <div className="space-y-12 sm:space-y-16">
+            {milestones.map((m, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -80 : 80 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  i % 2 === 0 ? "justify-start" : "justify-end"
+                className={`relative flex flex-col md:flex-row items-center ${
+                  i % 2 === 0 ? "md:justify-start" : "md:justify-end"
                 }`}
               >
-                {/* Card */}
                 <div
-                  className={`w-full md:w-1/2 p-6 rounded-2xl shadow-md bg-white border border-gray-100 ${
-                    i % 2 === 0 ? "mr-auto text-right" : "ml-auto text-left"
-                  } text-center md:text-inherit`}
+                  className={`w-full md:w-1/2 p-5 sm:p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md`}
                 >
-                  <h4 className="text-xl font-bold text-[#C01920] mb-2">
-                    {milestone.year}
+                  <h4 className="text-lg sm:text-xl font-bold text-[#C01920] mb-1">
+                    {m.year}
                   </h4>
-                  <p className="text-gray-700">{milestone.text}</p>
+                  <p className="text-gray-700 text-sm sm:text-base">{m.text}</p>
                 </div>
-
-                {/* Dot - visible only on md+ */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#C01920] shadow-lg"></div>
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-white border-4 border-[#C01920] shadow-lg"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 px-6 lg:px-20 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Why Choose Us?
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We go beyond construction — we design experiences, build trust, and
-            deliver value.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              title: "Expertise",
-              text: "Decades of hands-on experience in residential, commercial, and civil projects.",
-              icon: <Activity size={28} className="text-[#C01920]" />,
-            },
-            {
-              title: "Innovation",
-              text: "Modern design, cutting-edge techniques, and sustainable practices.",
-              icon: <Zap size={28} className="text-[#C01920]" />,
-            },
-            {
-              title: "Reliability",
-              text: "On-time delivery, transparent processes, and long-term client relationships.",
-              icon: <Handshake size={28} className="text-[#C01920]" />,
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="p-6 bg-gray-50 rounded-2xl shadow-md hover:shadow-2xl transition"
-            >
-              {/* Icon */}
-              <div className="mb-4">{item.icon}</div>
+      <AboutSection />
 
-              {/* Title */}
-              <h4 className="text-xl font-bold mb-3 text-gray-900">
-                {item.title}
-              </h4>
-
-              {/* Description */}
-              <p className="text-gray-600">{item.text}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Call To Action */}
-      <section className="py-20 bg-gradient-to-r from-[#C01920] via-[#EA9C88] to-[#6F6765] text-white text-center">
+      {/* ✅ CTA */}
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-r from-[#C01920] via-[#EA9C88] to-[#6F6765] text-white text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4"
         >
           Let’s Build Your Dream Project
         </motion.h2>
@@ -222,15 +305,14 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mb-8 max-w-2xl mx-auto"
+          className="max-w-2xl mx-auto mb-8 text-sm sm:text-base md:text-lg"
         >
           Partner with JK Builders for innovative, reliable, and high-quality
           construction services.
         </motion.p>
         <a
           href="/contact"
-          className="px-8 py-3 bg-white text-[#C01920] font-semibold rounded-full shadow-lg hover:bg-gray-100 transition"
+          className="px-8 py-3 sm:px-10 sm:py-4 bg-white text-[#C01920] font-semibold rounded-full shadow-xl hover:bg-gray-100 transition-all duration-300 text-sm sm:text-base"
         >
           Contact Us
         </a>

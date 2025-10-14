@@ -30,12 +30,12 @@ const features = [
 
 // 🏗️ Example Project Lists
 const previousProjects = [
-  "Project1 - Residential",
-  "Project2 - Commercial",
-  "Project3 - Industrial",
-  "Project4 - Residential",
-  "Project5 - Commercial",
-  "Project6 - Industrial",
+  "Metro Bazzar",
+  "Sri Vasam",
+  "Chandru Farmhouse",
+  "Elavarasan",
+  "Dr. Kumereshan",
+  "Surya Hotel",
 ];
 
 const ongoingProjects = [
@@ -80,8 +80,7 @@ const AboutSection = () => {
         </div>
 
         {/* About Company */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative w-full h-[350px] rounded-2xl overflow-hidden shadow-lg">
             <Image
               src="/hero3.jpg"
@@ -91,7 +90,6 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Right Content */}
           <div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Award Winning Construction Company in Tamil Nadu
@@ -103,7 +101,6 @@ const AboutSection = () => {
               exceptional craftsmanship, and commitment to client satisfaction.
             </p>
 
-            {/* Stats Section */}
             <div className="grid grid-cols-3 gap-6">
               <div
                 onClick={() => setActiveModal("previous")}

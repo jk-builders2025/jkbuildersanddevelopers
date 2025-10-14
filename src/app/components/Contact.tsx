@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useRef, useState } from "react";
 import {
   Mail,
@@ -19,7 +20,11 @@ export default function ContactPage() {
     if (!formRef.current) return;
 
     const formData = new FormData(formRef.current);
-    formData.append("access_key", "70a81ca7-d4d1-4364-9601-0d158e1763ec");
+
+    // ✅ Web3Forms required fields
+    formData.append("access_key", "47f1dcb8-5be7-4ff3-8c29-09fd95403cff");
+    formData.append("subject", "New Contact Form Submission");
+    formData.append("from_name", "JK Builders & Developers Website");
 
     toast.loading("Sending message...", { id: "submitToast" });
     setLoading(true);
@@ -55,7 +60,7 @@ export default function ContactPage() {
       <Toaster position="top-right" />
 
       <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* LEFT SIDE: Contact Info + Map */}
+        {/* LEFT SIDE — Contact Info & Map */}
         <div>
           <h2 className="text-3xl font-bold text-black mb-6">Get in Touch</h2>
           <p className="text-black mb-8">
@@ -72,6 +77,7 @@ export default function ContactPage() {
                 Krishnagiri, Tamil Nadu 635002
               </span>
             </li>
+
             <li className="flex items-center gap-4">
               <Phone className="w-6 h-6 text-[#C01920]" />
               <a
@@ -81,10 +87,11 @@ export default function ContactPage() {
                 +91 98403 64084
               </a>
             </li>
+
             <li className="flex items-center gap-4">
               <Mail className="w-6 h-6 text-[#C01920]" />
               <a
-                href="mailto:jkbuildersanddevelopers@gmail.com"
+                href="mailto:info@jkbuildersanddevelopers.com"
                 className="text-black hover:underline"
               >
                 info@jkbuildersanddevelopers.com
@@ -92,32 +99,37 @@ export default function ContactPage() {
             </li>
           </ul>
 
-          {/* Social Media */}
+          {/* Social Links */}
           <div className="flex gap-6 mt-10">
             <a
               href="https://www.facebook.com/share/1BHxJiD116/?mibextid=wwXIfr"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-black hover:text-indigo-600 transition"
             >
               <Facebook className="w-6 h-6" />
             </a>
+
             <a
               href="https://www.instagram.com/jk_builders_and_developers?igsh=dm9xMW44azlwZnd0&utm_source=qr"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-black hover:text-pink-600 transition"
             >
               <Instagram className="w-6 h-6" />
             </a>
+
             <a
               href="https://linkedin.com"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-black hover:text-blue-600 transition"
             >
               <Linkedin className="w-6 h-6" />
             </a>
           </div>
 
-          {/* Map */}
+          {/* Google Map */}
           <div className="rounded-2xl overflow-hidden shadow-lg h-[300px] mt-10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.6708901314587!2d78.20049337454024!3d12.537948224238532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac351e49d2d0f5%3A0xc0a395b36add8c9d!2sJk%20builders%20and%20developers!5e0!3m2!1sen!2sin!4v1759328215392!5m2!1sen!2sin"
@@ -131,11 +143,12 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* RIGHT SIDE: Contact Form */}
+        {/* RIGHT SIDE — Contact Form */}
         <div className="bg-white shadow-xl rounded-2xl p-8">
           <h2 className="text-3xl font-bold mb-6 text-[#C01920] text-center">
             Send Us a Message
           </h2>
+
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-black">

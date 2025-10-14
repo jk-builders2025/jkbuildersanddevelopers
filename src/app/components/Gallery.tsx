@@ -6,7 +6,7 @@ const categories = [
   "All",
   "Before & After",
   "Residential",
-  "Commercial",
+  "Apartments",
   "Interiors",
 ];
 
@@ -15,26 +15,50 @@ const projects = [
     id: 1,
     category: "Before & After",
     before: "/before1.jpg",
-    after: "/after1.jpg",
-    title: "Villa Renovation - Coimbatore",
+    after: "/sri_vasam/elevation1.jpg",
+    title: "Sri Vasam - Hotel",
   },
   {
     id: 2,
     category: "Residential",
-    img: "/hero1.jpg",
-    title: "Luxury Apartment - Chennai",
+    img: "/elavarasan/elevation.png",
+    title: "Elavarasan",
   },
   {
     id: 3,
-    category: "Commercial",
-    img: "/hero2.jpg",
-    title: "Corporate Office - Bangalore",
+    category: "Residential",
+    img: "/chandru_farmhouse/elevation1.jpeg",
+    title: "Chandru Farmhouse",
   },
   {
     id: 4,
+    category: "Residential",
+    img: "/dr_kumeresan/1.jpeg",
+    title: "Dr. Kumeresan",
+  },
+  {
+    id: 5,
+    category: "Apartments",
+    img: "/haesha_residency/elevation1.jpeg",
+    title: "Haesha Residency",
+  },
+  {
+    id: 6,
     category: "Interiors",
-    img: "/hero3.jpg",
-    title: "Modern Living Room - Hyderabad",
+    img: "/thuyamani_farm/interior1.jpeg",
+    title: "Thuyamani Farmhouse Interior",
+  },
+  {
+    id: 7,
+    category: "Interiors",
+    img: "/balasubramani/interior1.jpg",
+    title: "Balasubramani Interior",
+  },
+  {
+    id: 8,
+    category: "Apartments",
+    img: "/elangovan/elevation.jpeg",
+    title: "Elangovan Apartments",
   },
 ];
 

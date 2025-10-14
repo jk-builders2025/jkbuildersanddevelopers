@@ -102,7 +102,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
           <input
             type="hidden"
             name="access_key"
-            value="70a81ca7-d4d1-4364-9601-0d158e1763ec"
+            value="47f1dcb8-5be7-4ff3-8c29-09fd95403cff"
           />
 
           <div className="relative">

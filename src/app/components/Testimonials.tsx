@@ -122,7 +122,7 @@ const Testimonials = () => {
       {/* Decorative Doodle */}
       <div className="absolute -top-6 right-10 w-16 h-16 sm:w-20 sm:h-20 opacity-30">
         <Image
-          src="/decor/star-doodle.svg"
+          src="/doodle.jpg"
           alt="decorative doodle"
           fill
           className="object-contain"

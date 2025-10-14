@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
 const images = [
@@ -17,7 +17,11 @@ const images = [
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 const containerVariants: Variants = {
@@ -30,18 +34,30 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ openPopup }) => {
-  // Auto-open after 10 seconds (calls openPopup from parent)
+  // ✅ useRef prevents duplicate timers on re-renders
+  const popupTriggered = useRef(false);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      openPopup();
-    }, 10000);
-    return () => clearTimeout(timer);
+    if (popupTriggered.current) return; // prevent multiple runs
+    popupTriggered.current = true;
+
+    const timeouts: NodeJS.Timeout[] = [];
+
+    // Schedule popups at 10 s, 40 s, and 80 s
+    const timings = [10000, 40000, 80000];
+
+    timings.forEach((delay) => {
+      const t = setTimeout(() => openPopup(), delay);
+      timeouts.push(t);
+    });
+
+    return () => timeouts.forEach(clearTimeout);
   }, [openPopup]);
 
   return (
     <section className="relative w-full h-auto md:h-[100vh] flex items-center justify-center px-6 md:px-12 bg-white overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-7xl items-center relative z-10">
-        {/* Left Content */}
+        {/* ---------- Left Content ---------- */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -56,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
             Works
           </p>
 
-          {/* Trust Badges */}
+          {/* ---------- Trust Badges ---------- */}
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg shadow">
               ISO Certified
@@ -69,7 +85,7 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
             </span>
           </div>
 
-          {/* CTA */}
+          {/* ---------- CTA Button ---------- */}
           <div className="mt-8">
             <button
               onClick={openPopup}
@@ -80,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
           </div>
         </motion.div>
 
-        {/* Right Content */}
+        {/* ---------- Right Content (Image Animation) ---------- */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -91,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
             className="grid grid-cols-2 gap-3"
             animate={{ y: ["0%", "-50%"] }}
             transition={{
-              duration: 20,
+              duration: 25,
               repeat: Infinity,
               ease: "linear",
               delay: 1,
@@ -109,6 +125,9 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* ---------- Optional Background Overlay ---------- */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-[#FDF4F4] opacity-70 pointer-events-none" />
     </section>
   );
 };
