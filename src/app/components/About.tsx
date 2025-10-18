@@ -4,7 +4,6 @@ import { Building2, Clock, Award, Package, X } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-// 🧱 Features
 const features = [
   {
     icon: <Building2 className="w-8 h-8 text-[#C01920]" />,
@@ -28,7 +27,6 @@ const features = [
   },
 ];
 
-// 🏗️ Example Project Lists
 const previousProjects = [
   "Metro Bazzar",
   "Sri Vasam",
@@ -39,11 +37,11 @@ const previousProjects = [
 ];
 
 const ongoingProjects = [
-  "Ongoing Project1",
-  "Ongoing Project2",
-  "Ongoing Project3",
-  "Ongoing Project4",
-  "Ongoing Project5",
+  "Ongoing Project 1",
+  "Ongoing Project 2",
+  "Ongoing Project 3",
+  "Ongoing Project 4",
+  "Ongoing Project 5",
 ];
 
 const AboutSection = () => {
@@ -54,7 +52,7 @@ const AboutSection = () => {
   return (
     <section className="w-full py-20 bg-gray-50 relative">
       <div className="container mx-auto px-6 lg:px-16">
-        {/* Heading */}
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Key Features Of Dream
@@ -79,7 +77,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* About Company */}
+        {/* About Company Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative w-full h-[350px] rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -92,13 +90,15 @@ const AboutSection = () => {
 
           <div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Award Winning Construction Company in Tamil Nadu
+              At JK Builders and Developers, quality is our foundation and
+              excellence is our promise.
             </h3>
             <p className="text-gray-700 mb-8 leading-relaxed">
-              A distinguished and award-winning construction company proudly
-              situated in the heart of Tamil Nadu. With a legacy of excellence,
-              we have garnered recognition for our innovative approach,
-              exceptional craftsmanship, and commitment to client satisfaction.
+              We use only premium-quality materials with absolutely no
+              compromise. From approvals and planning to 2D and 3D designs,
+              interior and exterior concepts, MEP drawings, and full
+              construction solutions—we handle everything from scratch to
+              completion.
             </p>
 
             <div className="grid grid-cols-3 gap-6">
@@ -127,7 +127,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* ✨ Popup Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {activeModal && (
           <motion.div
@@ -146,7 +146,7 @@ const AboutSection = () => {
               className="relative bg-white rounded-3xl shadow-2xl w-[90%] md:w-[600px] max-h-[80vh] overflow-hidden"
             >
               <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                <h4 className="text-2xl font-bold text-gray-900">
+                <h4 className="text-2xl font-bold">
                   {activeModal === "previous"
                     ? "Previous Projects"
                     : "Ongoing Projects"}
@@ -155,7 +155,7 @@ const AboutSection = () => {
                   onClick={() => setActiveModal(null)}
                   className="p-2 rounded-full hover:bg-gray-100 transition"
                 >
-                  <X className="w-5 h-5 text-gray-600" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
@@ -170,11 +170,9 @@ const AboutSection = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="p-4 rounded-xl bg-gray-50 hover:bg-[#C01920]/10 transition"
+                      className="p-4 bg-gray-50 rounded-xl hover:bg-[#C01920]/10 transition"
                     >
-                      <span className="text-gray-800 font-medium">
-                        {project}
-                      </span>
+                      {project}
                     </motion.li>
                   ))}
                 </ul>

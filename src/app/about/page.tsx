@@ -47,17 +47,28 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "2017",
-      text: "Founded JK Builders with a small but passionate team.",
-    },
-    { year: "2019", text: "Completed our first 100+ residential projects." },
-    {
-      year: "2021",
-      text: "Expanded into commercial construction and large-scale projects.",
+      year: "2017 – The Beginning in Krishnagiri",
+      text: "JK Builders and Developers was founded in Krishnagiri, marking the start of journey in the residential construction sector. With a vision to deliver quality homes built on trust, innovation, innovation, and craftsmanship, we laid the foundation for a legacy of excellence.",
     },
     {
-      year: "2024",
-      text: "Recognized as a trusted builder with sustainable practices.",
+      year: "2019 – Expanding Horizons",
+      text: "Ventured into premium projects, including luxury villas and farmhouses, integrating China-imported products to enhance design and quality standards",
+    },
+    {
+      year: "2020 – Diversifying Expertise",
+      text: "Expanded operations to include industrial and commercial projects, marking a new milestone in our professional growth and versatility",
+    },
+    {
+      year: "2023 – Redefining Design Excellence",
+      text: "Introduced a complete design-to-end service model, offering clients a seamless experience from concept to completion. Opened our second branch in Hosur, strengthening our regional presence and client reach",
+    },
+    {
+      year: "2024 – Entering the Hospitality Sector",
+      text: "Ventured into hospitality and lifestyle projects, including hotels, jewellery showrooms, hospitals, and premium villas, reflecting our design innovation and construction excellence.",
+    },
+    {
+      year: "2025 – Global Expansion & Brand Launch",
+      text: "Transformed our Head Office into a Corporate Headquarters, symbolizing our evolution into a nextlevel enterprise. Launched an advanced Design Studio in China, taking our creative capabilities global. Introduced our own brand – ESTAGO, specializing in kitchenware, sanitary ware, furniture, lighting,and home décor. Through ESTAGO, we expanded into the global market, engaging in the import and export of all commodities while providing quality service and exceptional value.",
     },
   ];
 
