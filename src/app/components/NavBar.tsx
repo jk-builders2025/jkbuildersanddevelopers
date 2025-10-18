@@ -15,13 +15,15 @@ const NavBar = () => {
     <nav className="w-full sticky top-0 z-50 shadow-md bg-white px-6 md:px-12 py-4 flex justify-between items-center">
       {/* Logo */}
       <div className="flex items-center">
-        <Image
-          src="/jk-logo.jpg"
-          alt="JK Logo"
-          width={150}
-          height={50}
-          className="object-contain"
-        />
+        <Link href="/">
+          <Image
+            src="/jk-logo.jpg"
+            alt="JK Logo"
+            width={150}
+            height={50}
+            className="object-contain cursor-pointer"
+          />
+        </Link>
       </div>
 
       {/* Desktop Menu */}
