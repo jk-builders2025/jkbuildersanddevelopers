@@ -43,13 +43,12 @@ const previousProjects = [
   "DR. PARTHIBAN - NEAR NEW BUS STAND, KRISHNAGIRI",
   "DR. ELAMBARATHI - UTANGARAI ROAD, MATTUR",
 ];
-
 const ongoingProjects = [
-  "Ongoing Project 1",
-  "Ongoing Project 2",
-  "Ongoing Project 3",
-  "Ongoing Project 4",
-  "Ongoing Project 5",
+  "GOPAL - HOUSING BOARD, KRISHNAGIRI",
+  "KAVITA - POCHAMPALLI",
+  "SUDHAKAR - NEAR TAMILNADU HOTEL, KRISHNAGIRI",
+  "DR. PARTHIBAN - NEAR NEW BUS STAND, KRISHNAGIRI",
+  "ELANGOVAN APPARTMENT - STADIUM BACKSIDE, KRISHNAGIRI",
 ];
 
 const AboutSection = () => {
