@@ -14,7 +14,7 @@ const projects = [
     location: "Near New Bus Stand, Krishnagiri",
     type: "Commercial",
     status: "Completed",
-    img: "/hero3.jpg",
+    img: "/metro/elevation.png",
   },
   {
     id: 2,
@@ -27,15 +27,6 @@ const projects = [
   },
   {
     id: 3,
-    name: "Suriya Hotel",
-    desc: "A commercial hospitality project near Government College, Krishnagiri, featuring well-planned guest rooms and functional spaces.",
-    location: "Near Government College, Krishnagiri",
-    type: "Hotel",
-    status: "Completed",
-    img: "/default.jpg",
-  },
-  {
-    id: 4,
     name: "Harsha Residency",
     desc: "A residential complex in Gemini Estate, Krishnagiri, constructed with high-quality materials and efficient design layouts.",
     location: "Gemini Estate, Krishnagiri",
@@ -44,7 +35,7 @@ const projects = [
     img: "/haesha_residency/elevation1.jpeg",
   },
   {
-    id: 5,
+    id: 4,
     name: "Elangovan Apartment",
     desc: "A residential apartment project located at Stadium Backside, Krishnagiri, with optimized living spaces and modern construction standards.",
     location: "Stadium Backside, Krishnagiri",
@@ -53,7 +44,7 @@ const projects = [
     img: "/elangovan/elevation.jpeg",
   },
   {
-    id: 6,
+    id: 5,
     name: "Gopal House",
     desc: "A residential property in Housing Board, Krishnagiri, built with a focus on durability and comfortable living.",
     location: "Housing Board, Krishnagiri",
@@ -62,7 +53,7 @@ const projects = [
     img: "/haesha_residency/elevation3.jpeg",
   },
   {
-    id: 7,
+    id: 6,
     name: "Chandru (Farmhouse)",
     desc: "A farmhouse located in Thabalmedu, Bargur, designed for serene living with practical layouts and quality construction.",
     location: "Thabalmedu, Bargur",
@@ -71,7 +62,7 @@ const projects = [
     img: "/chandru_farmhouse/elevation1.jpeg",
   },
   {
-    id: 8,
+    id: 7,
     name: "Dr. Kumeresan",
     desc: "A residential project in Krishnagiri offering functional living spaces and high-standard construction materials.",
     location: "Krishnagiri",
@@ -80,7 +71,7 @@ const projects = [
     img: "/dr_kumeresan/1.jpeg",
   },
   {
-    id: 9,
+    id: 8,
     name: "Thuyamani (Farmhouse)",
     desc: "A farmhouse in Pochampalli, built with attention to durability and designed for comfortable rural living.",
     location: "Pochampalli",
@@ -89,7 +80,7 @@ const projects = [
     img: "/thuyamani_farm/interior1.jpeg",
   },
   {
-    id: 10,
+    id: 9,
     name: "Bala Subramaniam",
     desc: "A premium residential villa in Indra Nagar, Krishnagiri, designed with practical layouts and quality construction.",
     location: "Indra Nagar, Krishnagiri",
@@ -98,7 +89,7 @@ const projects = [
     img: "/balasubramani/interior1.jpg",
   },
   {
-    id: 11,
+    id: 10,
     name: "Elavarasan",
     desc: "A villa located on Kuppam Road, Krishnagiri, constructed with modern design principles and quality materials.",
     location: "Kuppam Road, Krishnagiri",
@@ -107,25 +98,16 @@ const projects = [
     img: "/elavarasan/elevation.png",
   },
   {
-    id: 12,
+    id: 11,
     name: "Venkateshwara Jewellery",
     desc: "A commercial property in Hosur designed for retail and office use with functional spaces and quality finishes.",
     location: "Hosur",
     type: "Commercial",
     status: "Completed",
-    img: "/default.jpg",
+    img: "/svj/svj.webp",
   },
   {
-    id: 13,
-    name: "Dr. Parthiban",
-    desc: "A residential property near New Bus Stand, Krishnagiri, constructed with a focus on longevity and practical living spaces.",
-    location: "Near New Bus Stand, Krishnagiri",
-    type: "Residential",
-    status: "Completed",
-    img: "/default.jpg",
-  },
-  {
-    id: 14,
+    id: 12,
     name: "Dr. Elambarathi",
     desc: "A residential project located at Utangarai Road, Mattur, built with attention to structural stability and efficient design.",
     location: "Utangarai Road, Mattur",
