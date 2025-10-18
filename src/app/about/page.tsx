@@ -18,6 +18,11 @@ export default function AboutPage() {
 
   const DesignTeamMembers = [
     {
+      name: "Suriya",
+      role: "Chief Architect",
+      image: "/design/suriya.jpeg",
+    },
+    {
       name: "Haripriya",
       role: "Interior Designer",
       image: "/design/haripriya.jpeg",
@@ -37,12 +42,22 @@ export default function AboutPage() {
       image: "/site/poovarasan.jpg",
     },
     {
+      name: "Silambarasan",
+      role: "Site Engineer",
+      image: "/site/silambarasan.jpg",
+    },
+    {
       name: "Babil Nathan",
       role: "Site Engineer",
       image: "/site/babilnathan.jpg",
     },
     { name: "Prasana", role: "Site Engineer", image: "/site/prasana.png" },
     { name: "Balaji", role: "Site Engineer", image: "/site/balaji.jpeg" },
+    {
+      name: "Chandra Sekar",
+      role: "Site Engineer",
+      image: "/site/chandra.jpeg",
+    },
   ];
 
   const milestones = [
@@ -213,7 +228,7 @@ export default function AboutPage() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
           Design & Architecture Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {DesignTeamMembers.map((m, i) => (
             <motion.div
               key={i}
@@ -242,7 +257,7 @@ export default function AboutPage() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-gray-900">
           Site Engineering Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {CivilTeamMembers.map((m, i) => (
             <motion.div
               key={i}
