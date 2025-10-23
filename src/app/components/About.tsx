@@ -59,7 +59,6 @@ const AboutSection = () => {
   return (
     <section className="w-full py-20 bg-gray-50 relative">
       <div className="container mx-auto px-6 lg:px-16">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Key Features Of Dream
@@ -70,7 +69,6 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {features.map((f, idx) => (
             <div
@@ -84,13 +82,13 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* About Company Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-          <div className="relative w-full h-[350px] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/hero3.jpg"
+              src="/tower.jpeg"
               alt="About JK Builders"
               fill
+              priority
               className="object-cover"
             />
           </div>
@@ -134,7 +132,6 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {activeModal && (
           <motion.div

@@ -113,7 +113,7 @@ const projects = [
     location: "Utangarai Road, Mattur",
     type: "Residential",
     status: "Completed",
-    img: "/default.jpg",
+    img: "/elambarathi/elevation1.jpeg",
   },
 ];
 
