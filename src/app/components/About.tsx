@@ -43,6 +43,7 @@ const previousProjects = [
   "DR. PARTHIBAN - NEAR NEW BUS STAND, KRISHNAGIRI",
   "DR. ELAMBARATHI - UTANGARAI ROAD, MATTUR",
 ];
+
 const ongoingProjects = [
   "GOPAL - HOUSING BOARD, KRISHNAGIRI",
   "KAVITA - POCHAMPALLI",
@@ -69,6 +70,7 @@ const AboutSection = () => {
           </p>
         </div>
 
+        {/* Feature Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {features.map((f, idx) => (
             <div
@@ -82,6 +84,7 @@ const AboutSection = () => {
           ))}
         </div>
 
+        {/* About Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
             <Image
@@ -132,6 +135,7 @@ const AboutSection = () => {
         </div>
       </div>
 
+      {/* Modal */}
       <AnimatePresence>
         {activeModal && (
           <motion.div
@@ -150,7 +154,7 @@ const AboutSection = () => {
               className="relative bg-white rounded-3xl shadow-2xl w-[90%] md:w-[600px] max-h-[80vh] overflow-hidden"
             >
               <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                <h4 className="text-2xl font-bold">
+                <h4 className="text-2xl font-bold text-gray-900">
                   {activeModal === "previous"
                     ? "Previous Projects"
                     : "Ongoing Projects"}
@@ -159,7 +163,7 @@ const AboutSection = () => {
                   onClick={() => setActiveModal(null)}
                   className="p-2 rounded-full hover:bg-gray-100 transition"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-5 h-5 text-gray-700" />
                 </button>
               </div>
 
@@ -174,7 +178,7 @@ const AboutSection = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="p-4 bg-gray-50 rounded-xl hover:bg-[#C01920]/10 transition"
+                      className="p-4 bg-gray-50 rounded-xl hover:bg-[#C01920]/10 transition text-gray-900"
                     >
                       {project}
                     </motion.li>

@@ -8,13 +8,13 @@ const services = [
     id: 1,
     title: "Architectural Design & Planning",
     desc: "Build smarter with innovative, sustainable, and compliant designs by our expert architects — ensuring beauty meets functionality at every stage.",
-    img: "/hero3.jpg",
+    img: "/hero6.jpg",
   },
   {
     id: 2,
     title: "Residential Construction",
     desc: "Turn your dream home into reality with tailored designs, durable materials, and attention to every detail — so you can live comfortably for generations.",
-    img: "/residential.jpg",
+    img: "/vasam_res.png",
   },
   {
     id: 3,
@@ -26,13 +26,13 @@ const services = [
     id: 4,
     title: "Hospitality",
     desc: "Keep your property in prime condition with our ongoing maintenance and facility management solutions — saving you time, stress, and money.",
-    img: "/hospitality.jpg",
+    img: "/hero8.jpg",
   },
   {
     id: 5,
     title: "Interior Design & Renovation",
     desc: "Transform interiors into modern, functional, and elegant spaces. From custom kitchens to luxury living rooms — we bring your vision to life..",
-    img: "/hero3.jpg",
+    img: "/3.6.jpg",
   },
   {
     id: 6,

@@ -76,7 +76,7 @@ const UniqueSection = () => {
             {[
               {
                 icon: Globe2,
-                text: "Imported Chinese Designs",
+                text: "Imported Chinese Materials",
               },
               {
                 icon: Building2,

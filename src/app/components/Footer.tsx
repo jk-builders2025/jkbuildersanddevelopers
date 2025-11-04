@@ -68,11 +68,32 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-sm text-gray-300">
+            {/* Main Branch */}
             <li>
-              📍 SF No 181/1A5B1, Sri Balaji Towers, Bangalore Highway,
-              Krishnagiri, Tamil Nadu 635002
+              <strong className="text-white">
+                📍 Main Branch – Krishnagiri:
+              </strong>
+              <br />
+              SF No 181/1A5B1, Sri Balaji Towers,
+              <br />
+              Bangalore Highway, Krishnagiri,
+              <br />
+              Tamil Nadu – 635002
             </li>
+
+            {/* Hosur Branch */}
+            <li>
+              <strong className="text-white">📍 Hosur Branch:</strong>
+              <br />
+              39/8, S.G.S Complex, II Floor,
+              <br />
+              Near Pallavi Store, Bagalur Road,
+              <br />
+              Hosur – 635109, Krishnagiri Dt.
+            </li>
+
+            {/* Contact Details */}
             <li>📞 +91 98403 64084</li>
             <li>✉️ info@jkbuildersanddevelopers.com</li>
           </ul>

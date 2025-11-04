@@ -134,7 +134,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#C01920] text-white py-3 rounded-2xl font-semibold shadow-lg hover:bg-[#A8151B] transition transform hover:scale-105 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Get Free Consultation"}
           </button>

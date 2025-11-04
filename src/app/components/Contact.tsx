@@ -69,15 +69,31 @@ export default function ContactPage() {
           </p>
 
           <ul className="space-y-6 text-lg text-black">
+            {/* Main Branch - Krishnagiri */}
             <li className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-[#C01920] mt-1" />
               <span>
+                <strong>Head Office – Krishnagiri</strong>
+                <br />
                 SF No 181/1A5B1, Sri Balaji Towers, Bangalore Highway, <br />
                 near JP Indian Oil Petrol Bunk, Bayanapalli, <br />
-                Krishnagiri, Tamil Nadu 635002
+                Krishnagiri, Tamil Nadu - 635002
               </span>
             </li>
 
+            {/* Hosur Branch */}
+            <li className="flex items-start gap-4">
+              <MapPin className="w-6 h-6 text-[#C01920] mt-1" />
+              <span>
+                <strong>Branch Office – Hosur</strong>
+                <br />
+                39/8, S.G.S Complex, II Floor, Near Pallavi Store, <br />
+                Bagalur Road, Hosur - 635109, <br />
+                Krishnagiri District
+              </span>
+            </li>
+
+            {/* Phone */}
             <li className="flex items-center gap-4">
               <Phone className="w-6 h-6 text-[#C01920]" />
               <a
@@ -88,6 +104,7 @@ export default function ContactPage() {
               </a>
             </li>
 
+            {/* Email */}
             <li className="flex items-center gap-4">
               <Mail className="w-6 h-6 text-[#C01920]" />
               <a

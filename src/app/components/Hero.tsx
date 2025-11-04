@@ -4,11 +4,11 @@ import React, { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
 const images = [
-  "/hero1.jpg",
-  "/hero2.jpg",
-  "/hero3.jpg",
-  "/hero4.jpg",
-  "/hero5.jpg",
+  "/haesha_residency/elevation2.jpeg",
+  "/elavarasan/elevation.png",
+  "/dr_kumeresan/1.jpeg",
+  "/balasubramani/1.jpg",
+  "/thuyamani_farm/7.jpeg",
   "/hero6.jpg",
   "/hero7.jpg",
   "/hero8.jpg",
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ openPopup }) => {
           {/* ---------- Trust Badges ---------- */}
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg shadow">
-              ISO Certified
+              BNI Member
             </span>
             <span className="px-4 py-2 bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg shadow">
               10+ Years Experience
