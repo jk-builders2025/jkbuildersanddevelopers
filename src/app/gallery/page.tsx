@@ -45,4 +45,3 @@ const GalleryPage = () => {
 };
 
 export default GalleryPage;
-'0.  '

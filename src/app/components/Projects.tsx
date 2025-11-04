@@ -7,8 +7,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
+interface Project {
+  id: number;
+  name: string;
+  desc: string;
+  images: string[];
+}
 
-const projects = [
+// ✅ Define a type for apartment projects (optional but good practice)
+interface ApartmentProject {
+  id: number;
+  name: string;
+  desc: string;
+  location: string;
+  type: string;
+  status: string;
+  img: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     name: "Golden Park Hotel",
@@ -121,7 +138,7 @@ const projects = [
   },
 ];
 
-const ApartmentProjects = [
+const ApartmentProjects: ApartmentProject[] = [
   {
     id: 1,
     name: "Harsha Apartment",
@@ -152,7 +169,7 @@ const ApartmentProjects = [
 ];
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState<any | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <section className="px-6 md:px-12 lg:px-20 py-16 bg-gray-50 relative">
