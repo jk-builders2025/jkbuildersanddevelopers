@@ -94,7 +94,23 @@ const projects = [
     id: 14,
     category: "Residential",
     img: "/gallery/dharshadan.jpg",
-    title: "Dhasaradhan house",
+    title: "Dhasaradhan House",
+  },
+];
+
+// 🎬 Video Reels Section Data
+const reels = [
+  {
+    id: 1,
+    src: "/videos/reel1.mp4",
+  },
+  {
+    id: 2,
+    src: "/videos/reel2.mp4",
+  },
+  {
+    id: 3,
+    src: "/videos/reel3.mp4",
   },
 ];
 
@@ -137,14 +153,13 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Image Gallery */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
             className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition duration-300 group"
           >
-            {/* Before/After case */}
             {project.before && project.after ? (
               <div className="grid grid-cols-2 gap-1">
                 <div className="relative w-full h-52">
@@ -178,18 +193,51 @@ const Gallery = () => {
                   fill
                   className="object-cover group-hover:scale-105 transition duration-500"
                 />
-                {/* Overlay effect */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300"></div>
               </div>
             )}
 
-            {/* Title */}
             <div className="p-5">
               <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#C01920] transition">
                 {project.title}
               </h3>
               <p className="text-sm text-gray-500 mt-1">{project.category}</p>
             </div>
+          </div>
+        ))}
+      </div>
+
+      {/* 🎬 Reels / Video Section */}
+      <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          Our <span className="text-[#C01920]">Reels</span>
+        </h2>
+        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          Experience our projects in motion — walkthroughs, transformations, and
+          highlights.
+        </p>
+      </div>
+
+      {/* Reels Grid */}
+      <div className="flex flex-wrap justify-center gap-8">
+        {reels.map((video) => (
+          <div
+            key={video.id}
+            className="relative overflow-hidden rounded-2xl shadow-lg bg-black group 
+                 w-full sm:w-[320px] md:w-[360px] lg:w-[380px] xl:w-[400px]"
+          >
+            {/* Video */}
+            <video
+              src={video.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full aspect-[9/16] object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+
+            {/* Hover overlay effect */}
+            <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         ))}
       </div>
