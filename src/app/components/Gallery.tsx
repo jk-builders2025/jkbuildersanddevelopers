@@ -60,6 +60,42 @@ const projects = [
     img: "/elangovan/elevation.jpeg",
     title: "Elangovan Apartments",
   },
+  {
+    id: 9,
+    category: "Residential",
+    img: "/golden_park_hotel/1elevation.png",
+    title: "Golden Park Residency",
+  },
+  {
+    id: 10,
+    category: "Apartments",
+    img: "/gallery/Gopal_apartment.jpg",
+    title: "Gopal Apartments",
+  },
+  {
+    id: 11,
+    category: "Residential",
+    img: "/gallery/vanigar_sangam.jpg",
+    title: "Vanigar Sangam",
+  },
+  {
+    id: 12,
+    category: "Residential",
+    img: "/gallery/Vasavi_sky_lavilla.jpg",
+    title: "Vasavi Sky Villa",
+  },
+  {
+    id: 13,
+    category: "Interiors",
+    img: "/gallery/prem.jpg",
+    title: "Prem",
+  },
+  {
+    id: 14,
+    category: "Residential",
+    img: "/gallery/dharshadan.jpg",
+    title: "Dhasaradhan house",
+  },
 ];
 
 const Gallery = () => {
