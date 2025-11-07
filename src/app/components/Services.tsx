@@ -14,13 +14,13 @@ const services = [
     id: 2,
     title: "Residential Construction",
     desc: "Turn your dream home into reality with tailored designs, durable materials, and attention to every detail — so you can live comfortably for generations.",
-    img: "/vasam_res.png",
+    img: "/dr_kumeresan/1.jpeg",
   },
   {
     id: 3,
-    title: "Commercial Builds",
+    title: "Commercial Construction",
     desc: "Boost your business with smart, functional, and stylish commercial spaces that impress clients, inspire employees, and maximize efficiency.",
-    img: "/commercial.jpg",
+    img: "/vasam_res.png",
   },
   {
     id: 4,

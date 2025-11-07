@@ -8,6 +8,7 @@ const categories = [
   "Residential",
   "Apartments",
   "Interiors",
+  "Hospitality-Hotel",
 ];
 
 const projects = [
@@ -40,7 +41,7 @@ const projects = [
     id: 5,
     category: "Apartments",
     img: "/haesha_residency/elevation1.jpeg",
-    title: "Haesha Residency",
+    title: "Harsha Residency",
   },
   {
     id: 6,
@@ -62,7 +63,7 @@ const projects = [
   },
   {
     id: 9,
-    category: "Residential",
+    category: "Hospitality-Hotel",
     img: "/golden_park_hotel/1elevation.png",
     title: "Golden Park Residency",
   },
@@ -74,7 +75,7 @@ const projects = [
   },
   {
     id: 11,
-    category: "Residential",
+    category: "Commercial",
     img: "/gallery/vanigar_sangam.jpg",
     title: "Vanigar Sangam",
   },
