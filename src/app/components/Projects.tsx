@@ -43,8 +43,10 @@ const projects: Project[] = [
     name: "Sri Vaasan",
     desc: "A residential project in Pochampalli, designed with practical layouts and high-quality finishes for lasting comfort.",
     images: [
-      "/sri_vasam/elevation1.jpg",
-      "/sri_vasam/interior2.jpg",
+      "/vasam_res.png",
+      "/sri_vasam/vasam2.jpeg",
+      "/sri_vasam/vasam3.jpeg",
+      "/sri_vasam/vasam4.jpeg",
       "/sri_vasam/interior3.jpg",
       "/sri_vasam/elevation2.jpg",
     ],
@@ -80,6 +82,7 @@ const projects: Project[] = [
     name: "Chandru (Farmhouse)",
     desc: "A farmhouse located in Thabalmedu, Bargur, designed for serene living with practical layouts and quality construction.",
     images: [
+      "/chandru_farmhouse/front.webp",
       "/chandru_farmhouse/elevation1.jpeg",
       "/chandru_farmhouse/elevation2.jpeg",
       "/chandru_farmhouse/elevation3.jpeg",
@@ -119,8 +122,8 @@ const projects: Project[] = [
     name: "Elavarasan",
     desc: "A villa located on Kuppam Road, Krishnagiri, constructed with modern design principles and quality materials.",
     images: [
-      "/elavarasan/elevation.png",
       "/elavarasan/out.png",
+      "/elavarasan/elevation.png",
       // "/elavarasan/interior2.jpeg",
     ],
   },
@@ -129,12 +132,6 @@ const projects: Project[] = [
     name: "Venkateshwara Jewellery",
     desc: "A commercial property in Hosur designed for retail and office use with functional spaces and quality finishes.",
     images: ["/svj/svj.webp"],
-  },
-  {
-    id: 12,
-    name: "Dr. Elambarathi",
-    desc: "A residential project located at Utangarai Road, Mattur, built with attention to structural stability and efficient design.",
-    images: ["/elambarathi/elevation1.jpeg"],
   },
 ];
 

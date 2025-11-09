@@ -10,10 +10,10 @@ import AboutSection from "../components/About";
 
 export default function AboutPage() {
   const founder = {
-    name: "Kavi Arasu",
+    name: "Kaviarasu T",
     title: "Founder & Managing Director",
     image: "/founder.jpg",
-    desc: "Kavi Arasu, the visionary behind JK Builders & Developers, is an IIT Kanpur certified professional, Nakshatra Award recipient, and a proud BNI member. His leadership combines innovation, precision, and passion for excellence in construction and design.",
+    desc: "Kaviarasu, the visionary behind JK Builders & Developers, is an IIT Kanpur certified professional, Nakshatra Award recipient, and a proud BNI member. His leadership combines innovation, precision, and passion for excellence in construction and design.",
   };
 
   const DesignTeamMembers = [

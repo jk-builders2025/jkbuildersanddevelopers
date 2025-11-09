@@ -97,6 +97,13 @@ const projects = [
     img: "/gallery/dharshadan.jpg",
     title: "Dhasaradhan House",
   },
+  {
+    id: 15,
+    category: "Before & After",
+    before: "/vasam_res.png",
+    after: "/sri_vasam/elevation1.jpg",
+    title: "Commercial",
+  },
 ];
 
 // 🎬 Video Reels Section Data
