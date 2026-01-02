@@ -8,7 +8,7 @@ const services = [
     id: 1,
     title: "Architectural Design & Planning",
     desc: "Build smarter with innovative, sustainable, and compliant designs by our expert architects — ensuring beauty meets functionality at every stage.",
-    img: "/hero6.jpg",
+    img: "/planning.jpg",
   },
   {
     id: 2,
@@ -38,13 +38,13 @@ const services = [
     id: 6,
     title: "Roadworks & Infrastructure",
     desc: "From roads to large-scale infrastructure, our precision-driven approach ensures durability, safety, and long-term reliability for communities.",
-    img: "/road.jpg",
+    img: "/roads.jpg",
   },
   {
     id: 7,
     title: "Maintenance & Facility Management",
     desc: "Keep your property in prime condition with our ongoing maintenance and facility management solutions — saving you time, stress, and money.",
-    img: "/maintance.jpg",
+    img: "/maintanc.jpg",
   },
 ];
 

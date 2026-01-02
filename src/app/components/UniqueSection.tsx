@@ -21,7 +21,7 @@ const UniqueSection = () => {
         >
           <div className="relative w-full h-[340px] sm:h-[420px] rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/hero3.jpg"
+              src="/golden_park_hotel/1elevation.png"
               alt="World-class hotel designs"
               fill
               className="object-cover"

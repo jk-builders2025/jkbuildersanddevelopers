@@ -9,8 +9,8 @@ const images = [
   "/dr_kumeresan/1.jpeg",
   "/balasubramani/1.jpg",
   "/thuyamani_farm/7.jpeg",
-  "/hero6.jpg",
-  "/hero7.jpg",
+  "/golden_park_hotel/1elevation.png", // this need to be change
+  "/hero7.jpg", //this need to be change
   "/hero8.jpg",
   "/hero9.jpg",
 ];
